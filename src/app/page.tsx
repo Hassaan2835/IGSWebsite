@@ -12,7 +12,7 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-8 items-center">
           <div className="space-y-6 text-center md:text-left">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-primary-foreground-dark">
-              Welcome to <span className="text-primary">MediCatalog</span>
+              Welcome to <span className="text-primary">IGS Health Care</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground">
               Your trusted partner in natural healthcare. Discover our commitment to quality, innovation, and your well-being.
@@ -29,10 +29,10 @@ export default function Home() {
           <div className="relative h-64 md:h-auto">
              <Image
               src="https://picsum.photos/600/400"
-              alt="Healthcare professionals"
+              alt="Pills"
               width={600}
               height={400}
-              data-ai-hint="healthcare professionals"
+              data-ai-hint="pills"
               className="rounded-xl shadow-2xl object-cover w-full h-full"
             />
           </div>
