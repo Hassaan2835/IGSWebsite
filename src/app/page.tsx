@@ -26,14 +26,13 @@ export default function Home() {
               </Button>
             </div>
           </div>
-          <div className="relative h-64 md:h-auto">
+          <div className="relative h-64 md:h-96">
              <Image
               src="https://storage.googleapis.com/project-spark-b249641a-6e69-450f-bc3a-f3d3d6e5025f/tmp/2231922c-a28a-45c1-8422-944a991f251d.jpg"
               alt="Pills"
-              width={600}
-              height={400}
+              fill
               data-ai-hint="pills"
-              className="rounded-xl shadow-2xl object-cover w-full h-full"
+              className="rounded-xl shadow-2xl object-cover"
             />
           </div>
         </div>
