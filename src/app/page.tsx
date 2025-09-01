@@ -30,9 +30,9 @@ export default function Home() {
           <div className="relative h-64 md:h-96">
              <Image
               src="https://picsum.photos/800/600"
-              alt="Colorful pills"
+              alt="Pills"
               fill
-              data-ai-hint="colorful pills"
+              data-ai-hint="pills"
               className="rounded-xl shadow-2xl object-cover"
             />
           </div>
