@@ -29,10 +29,10 @@ export default function Home() {
           </div>
           <div className="relative h-64 md:h-96">
              <Image
-              src="https://picsum.photos/800/600"
-              alt="Pills"
+              src="https://img.freepik.com/free-photo/colorful-pills-syringe_23-2147983123.jpg"
+              alt="Colorful pills and a syringe"
               fill
-              data-ai-hint="pills capsules"
+              data-ai-hint="pills syringe"
               className="rounded-xl shadow-2xl object-cover"
             />
           </div>
