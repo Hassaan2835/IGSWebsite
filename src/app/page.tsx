@@ -28,7 +28,7 @@ export default function Home() {
           </div>
           <div className="relative h-64 md:h-96">
              <Image
-              src="https://storage.googleapis.com/project-spark-b249641a-6e69-450f-bc3a-f3d3d6e5025f/tmp/2231922c-a28a-45c1-8422-944a991f251d.jpg"
+              src="https://storage.googleapis.com/project-spark-b249641a-6e69-450f-bc3a-f3d3d6e5025f/tmp/571891b8-6a3f-4809-b78f-a94f31c22d11.jpg"
               alt="Pills"
               fill
               data-ai-hint="pills"
