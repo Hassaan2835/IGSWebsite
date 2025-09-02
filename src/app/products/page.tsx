@@ -38,10 +38,19 @@ export default function ProductsPage({
           <TabsContent key={category.id} value={category.id}>
              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
               {products
-                .filter((product) => product.category === category.id)
-                .map((product) => (
-                  <ProductCard key={product.id} product={product} />
-                ))}
+                .filter((product) => product.category === category.id).length > 0 ? (
+                  products
+                    .filter((product) => product.category === category.id)
+                    .map((product) => (
+                      <ProductCard key={product.id} product={product} />
+                    ))
+                ) : (
+                  <div className="col-span-full text-center py-16">
+                    <h3 className="text-2xl font-semibold">Coming Soon!</h3>
+                    <p className="text-muted-foreground mt-2">New products for this category are on their way.</p>
+                  </div>
+                )
+              }
             </div>
           </TabsContent>
         ))}
