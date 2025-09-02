@@ -266,10 +266,10 @@ export const products: Product[] = [
   },
   {
     id: 'prod-004',
-    name: 'Colic-Calm',
+    name: 'IGS-ZYME',
     category: 'colic-pain',
-    image: 'https://picsum.photos/400/400',
-    dataAiHint: 'happy baby',
+    image: 'https://uploads.onecompiler.io/43vh7ked9/43vjbbt7a/IMG-20250722-WA0017.png',
+    dataAiHint: 'product bottle',
     shortDescription: 'Natural relief for infant colic, gas, and upset stomach.',
     originalDescription: 'A safe and gentle gripe water alternative made with natural herbal ingredients to soothe an infant\'s digestive system.',
     keyIngredients: 'Chamomile, Fennel, Ginger',
