@@ -75,10 +75,10 @@ export default function Home() {
            <div className="relative h-64 md:h-auto order-last md:order-first">
              <Image
               src="https://picsum.photos/600/450"
-              alt="Company mission"
+              alt="A modern research laboratory"
               width={600}
               height={450}
-              data-ai-hint="laboratory"
+              data-ai-hint="modern laboratory"
               className="rounded-xl shadow-xl object-cover w-full h-full"
             />
           </div>
