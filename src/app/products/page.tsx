@@ -19,7 +19,7 @@ export default function ProductsPage({
       </div>
 
       <Tabs defaultValue={defaultCategory} className="w-full">
-        <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 mx-auto max-w-2xl mb-12">
+        <TabsList className="grid w-full grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 mx-auto max-w-4xl mb-12">
           <TabsTrigger value="all">All</TabsTrigger>
           {productCategories.map((category) => (
             <TabsTrigger key={category.id} value={category.id}>{category.name}</TabsTrigger>

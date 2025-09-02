@@ -1,7 +1,13 @@
+export type ProductCategory = {
+  id: 'vitamins' | 'joint-bone-health' | 'iron-deficiency' | 'colic-pain' | 'weight-loss-liver' | 'memory-booster';
+  name: string;
+  description: string;
+};
+
 export type Product = {
   id: string;
   name: string;
-  category: 'vitamins' | 'stress-sleep' | 'immune-booster';
+  category: ProductCategory['id'];
   image: string;
   dataAiHint: string;
   shortDescription: string;
@@ -13,27 +19,36 @@ export type Product = {
   };
 };
 
-export type ProductCategory = {
-  id: 'vitamins' | 'stress-sleep' | 'immune-booster';
-  name: string;
-  description: string;
-};
-
 export const productCategories: ProductCategory[] = [
   {
     id: 'vitamins',
-    name: 'Vitamins & Minerals',
-    description: 'Essential nutrients to support your overall health and fill dietary gaps.',
+    name: 'Vitamins',
+    description: 'Essential nutrients to support your overall health.',
   },
   {
-    id: 'stress-sleep',
-    name: 'Stress, Sleep & Mood',
-    description: 'Natural formulas to help you manage stress, improve sleep quality, and balance your mood.',
+    id: 'joint-bone-health',
+    name: 'Joint & Bone Health',
+    description: 'Support for strong bones and flexible joints.',
   },
   {
-    id: 'immune-booster',
-    name: 'Immune Booster',
-    description: 'Strengthen your body\'s natural defenses with our powerful immune-supporting supplements.',
+    id: 'iron-deficiency',
+    name: 'Iron Deficiency',
+    description: 'Formulas to combat iron deficiency and boost energy.',
+  },
+  {
+    id: 'colic-pain',
+    name: 'Colic Pain',
+    description: 'Gentle solutions for relieving colic pain in infants.',
+  },
+  {
+    id: 'weight-loss-liver',
+    name: 'Weight Loss-Liver',
+    description: 'Support for healthy weight management and liver function.',
+  },
+  {
+    id: 'memory-booster',
+    name: 'Memory Booster',
+    description: 'Enhance cognitive function and memory.',
   },
 ];
 
@@ -54,72 +69,72 @@ export const products: Product[] = [
   },
   {
     id: 'prod-002',
-    name: 'Iron Forte',
-    category: 'vitamins',
+    name: 'Osteo-Strength',
+    category: 'joint-bone-health',
     image: 'https://picsum.photos/400/400',
-    dataAiHint: 'supplement capsules',
-    shortDescription: 'High-potency iron supplement for healthy red blood cells.',
-    originalDescription: 'Iron Forte provides a significant dose of iron to help combat iron deficiency and anemia. Gentle on the stomach.',
-    keyIngredients: 'Ferrous Bisglycinate, Vitamin C, Folic Acid',
+    dataAiHint: 'strong bones',
+    shortDescription: 'Comprehensive support for bone density and joint flexibility.',
+    originalDescription: 'Osteo-Strength combines calcium with essential co-factors to ensure optimal bone health and support for aging joints.',
+    keyIngredients: 'Calcium Citrate, Vitamin K2, Magnesium, Glucosamine',
     details: {
-      composition: 'Ferrous Bisglycinate (25mg), Vitamin C (60mg), Folic Acid (400mcg).',
-      healthBenefits: 'Essential for red blood cell formation, reduces fatigue, and supports cognitive function.',
+      composition: 'Calcium Citrate (1000mg), Vitamin K2 (100mcg), Magnesium (400mg), Glucosamine (1500mg).',
+      healthBenefits: 'Maintains strong bones, supports joint cartilage, and improves mobility.',
     },
   },
   {
     id: 'prod-003',
-    name: 'CalmEase Formula',
-    category: 'stress-sleep',
+    name: 'Iron-Up',
+    category: 'iron-deficiency',
     image: 'https://picsum.photos/400/400',
-    dataAiHint: 'herbal tea',
-    shortDescription: 'A natural blend to soothe stress and anxiety.',
-    originalDescription: 'CalmEase Formula is a herbal supplement that helps reduce feelings of stress and promotes a sense of calm during the day.',
-    keyIngredients: 'Ashwagandha, L-Theanine, Chamomile',
+    dataAiHint: 'energy boost',
+    shortDescription: 'Gentle and effective iron supplement to fight fatigue.',
+    originalDescription: 'A non-constipating iron formula designed for maximum absorption to help restore healthy iron levels and improve energy.',
+    keyIngredients: 'Iron Bisglycinate, Vitamin C, Beet Root',
     details: {
-      composition: 'Ashwagandha Root Extract (300mg), L-Theanine (200mg), Chamomile Flower Extract (150mg).',
-      healthBenefits: 'Reduces cortisol levels, promotes relaxation without drowsiness, and supports a positive mood.',
+      composition: 'Iron Bisglycinate (25mg), Vitamin C (100mg), Beet Root Powder (50mg).',
+      healthBenefits: 'Combats iron-deficiency anemia, reduces tiredness, and supports red blood cell production.',
     },
   },
   {
     id: 'prod-004',
-    name: 'Deep Sleep PM',
-    category: 'stress-sleep',
+    name: 'Colic-Calm',
+    category: 'colic-pain',
     image: 'https://picsum.photos/400/400',
-    dataAiHint: 'moon night',
-    shortDescription: 'Promotes restful sleep and helps you wake up refreshed.',
-    originalDescription: 'Deep Sleep PM is a sleep aid with natural ingredients. It helps you fall asleep faster and stay asleep longer.',
-    keyIngredients: 'Melatonin, Valerian Root, Magnesium',
+    dataAiHint: 'happy baby',
+    shortDescription: 'Natural relief for infant colic, gas, and upset stomach.',
+    originalDescription: 'A safe and gentle gripe water alternative made with natural herbal ingredients to soothe an infant\'s digestive system.',
+    keyIngredients: 'Chamomile, Fennel, Ginger',
     details: {
-      composition: 'Melatonin (5mg), Valerian Root Extract (400mg), Magnesium Glycinate (200mg).',
-      healthBenefits: 'Regulates sleep-wake cycles, improves sleep quality, and supports muscle relaxation.',
+      composition: 'Proprietary blend of Chamomile, Fennel, and Ginger extracts.',
+      healthBenefits: 'Provides fast-acting relief from colic and gas, calms fussiness, and supports gentle digestion.',
     },
   },
   {
     id: 'prod-005',
-    name: 'ImmunoGuard Plus',
-    category: 'immune-booster',
+    name: 'Liva-Trim',
+    category: 'weight-loss-liver',
     image: 'https://picsum.photos/400/400',
-    dataAiHint: 'orange fruit',
-    shortDescription: 'Potent formula to supercharge your immune system.',
-    originalDescription: 'A powerful combination of vitamins and herbs to boost your immune response, especially during cold and flu season.',
-    keyIngredients: 'Echinacea, Elderberry, Vitamin C, Zinc',
+    dataAiHint: 'healthy liver',
+    shortDescription: 'Dual-action formula for weight management and liver detox.',
+    originalDescription: 'Liva-Trim supports the body’s natural fat-burning processes while also promoting liver health and detoxification pathways.',
+    keyIngredients: 'Milk Thistle, Green Tea Extract, Turmeric',
     details: {
-      composition: 'Echinacea Extract (400mg), Elderberry Extract (300mg), Vitamin C (1000mg), Zinc (25mg).',
-      healthBenefits: 'Strengthens immune defenses, provides antioxidant support, and may reduce the duration of colds.',
+      composition: 'Milk Thistle (250mg), Green Tea Extract (500mg), Turmeric Root (150mg).',
+      healthBenefits: 'Supports metabolic function, protects liver cells from damage, and aids in detoxification.',
     },
   },
   {
     id: 'prod-006',
-    name: 'Defense Shield',
-    category: 'immune-booster',
+    name: 'Cogni-Sharp',
+    category: 'memory-booster',
     image: 'https://picsum.photos/400/400',
-    dataAiHint: 'garlic herb',
-    shortDescription: 'Daily support for a resilient immune system.',
-    originalDescription: 'Defense Shield is designed for long-term immune maintenance. It combines traditional herbs with essential vitamins.',
-    keyIngredients: 'Astragalus, Garlic Extract, Vitamin D3',
+    dataAiHint: 'sharp mind',
+    shortDescription: 'Enhances focus, clarity, and memory recall.',
+    originalDescription: 'A nootropic formula with clinically studied ingredients to support brain health, improve concentration, and boost long-term memory.',
+    keyIngredients: 'Bacopa Monnieri, Ginkgo Biloba, Phosphatidylserine',
     details: {
-      composition: 'Astragalus Root (500mg), Odorless Garlic Extract (200mg), Vitamin D3 (2000 IU).',
-      healthBenefits: 'Adaptogenic immune support, promotes cardiovascular health, and crucial for immune cell function.',
+      composition: 'Bacopa Monnieri (300mg), Ginkgo Biloba (120mg), Phosphatidylserine (100mg).',
+      healthBenefits: 'Improves memory and cognitive performance, supports brain circulation, and protects against age-related cognitive decline.',
     },
   },
 ];

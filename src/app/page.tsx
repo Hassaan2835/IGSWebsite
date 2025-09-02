@@ -3,8 +3,18 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Syringe, Pill, HeartPulse, Microscope, Target, Handshake } from 'lucide-react';
+import { Pill, Shield, Bone, Brain, Droplet, Weight, Baby } from 'lucide-react';
 import { productCategories } from '@/lib/mock-data';
+import { ReactElement } from 'react';
+
+const categoryIcons: { [key: string]: ReactElement } = {
+  'vitamins': <Pill className="w-8 h-8" />,
+  'joint-bone-health': <Bone className="w-8 h-8" />,
+  'iron-deficiency': <Droplet className="w-8 h-8" />,
+  'colic-pain': <Baby className="w-8 h-8" />,
+  'weight-loss-liver': <Weight className="w-8 h-8" />,
+  'memory-booster': <Brain className="w-8 h-8" />,
+};
 
 export default function Home() {
   return (
@@ -48,13 +58,11 @@ export default function Home() {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {productCategories.map((category) => (
+            {productCategories.slice(0, 3).map((category) => (
               <Card key={category.id} className="text-center hover:shadow-lg transition-shadow duration-300">
                 <CardHeader>
                   <div className="mx-auto bg-primary/10 rounded-full p-4 w-fit text-primary">
-                    {category.id === 'vitamins' && <Pill className="w-8 h-8" />}
-                    {category.id === 'stress-sleep' && <Syringe className="w-8 h-8" />}
-                    {category.id === 'immune-booster' && <HeartPulse className="w-8 h-8" />}
+                    {categoryIcons[category.id] || <Pill className="w-8 h-8" />}
                   </div>
                   <CardTitle className="pt-4">{category.name}</CardTitle>
                 </CardHeader>
@@ -104,17 +112,17 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="flex flex-col items-center text-center p-6 space-y-3">
-              <Microscope className="w-12 h-12 text-accent" />
+              <Pill className="w-12 h-12 text-accent" />
               <h3 className="text-xl font-semibold">Research &amp; Development</h3>
               <p className="text-muted-foreground">Our R&amp;D team continuously explores new natural compounds and formulations to create innovative health solutions.</p>
             </div>
              <div className="flex flex-col items-center text-center p-6 space-y-3">
-              <Target className="w-12 h-12 text-accent" />
+              <Shield className="w-12 h-12 text-accent" />
               <h3 className="text-xl font-semibold">Marketing and Sales</h3>
               <p className="text-muted-foreground">We build strong relationships with distributors and healthcare professionals to ensure our products reach those in need.</p>
             </div>
              <div className="flex flex-col items-center text-center p-6 space-y-3">
-              <Handshake className="w-12 h-12 text-accent" />
+              <Shield className="w-12 h-12 text-accent" />
               <h3 className="text-xl font-semibold">Building Trust</h3>
               <p className="text-muted-foreground">We aim to build trust with partners and consumers through transparency, quality, and a commitment to health.</p>
             </div>
