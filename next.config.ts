@@ -39,6 +39,12 @@ const nextConfig: NextConfig = {
         hostname: 'img.freepik.com',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.guardian.in',
+        port: '',
+        pathname: '/**',
       }
     ],
   },
