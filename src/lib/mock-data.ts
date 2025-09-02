@@ -55,9 +55,9 @@ export const productCategories: ProductCategory[] = [
 export const products: Product[] = [
   {
     id: 'prod-001',
-    name: 'VitaBoost Daily',
+    name: 'IGS-G GOLD',
     category: 'vitamins',
-    image: 'https://picsum.photos/400/400',
+    image: 'https://uploads.onecompiler.io/43vh7ked9/43vjbf8wf/IMG-20250722-WA0020.png',
     dataAiHint: 'vitamin bottle',
     shortDescription: 'A complete multivitamin for daily energy and vitality.',
     originalDescription: 'VitaBoost Daily is a standard multivitamin tablet that provides essential vitamins and minerals for overall health. It is designed for daily use.',
@@ -69,9 +69,9 @@ export const products: Product[] = [
   },
   {
     id: 'prod-007',
-    name: 'Children\'s Chewable Multivitamin',
+    name: 'CAl-IGS',
     category: 'vitamins',
-    image: 'https://picsum.photos/401/401',
+    image: 'https://uploads.onecompiler.io/43vh7ked9/43vj7vcae/IMG-20250722-WA0013.png',
     dataAiHint: 'chewable vitamins',
     shortDescription: 'A tasty, chewable multivitamin for growing kids.',
     originalDescription: 'These fun, animal-shaped chewable vitamins provide essential nutrients for a child’s healthy growth and development.',
@@ -83,9 +83,9 @@ export const products: Product[] = [
   },
   {
     id: 'prod-008',
-    name: 'Prenatal Complete',
+    name: 'IGS-C',
     category: 'vitamins',
-    image: 'https://picsum.photos/402/402',
+    image: 'https://uploads.onecompiler.io/43vh7ked9/43vjbf8wf/IMG-20250722-WA0025.png',
     dataAiHint: 'prenatal vitamins',
     shortDescription: 'Essential nutrition for expectant mothers and their babies.',
     originalDescription: 'A comprehensive prenatal vitamin that provides key nutrients for fetal development and maternal health.',
