@@ -29,10 +29,10 @@ export default function Home() {
           </div>
           <div className="relative h-64 md:h-96">
              <Image
-              src="https://www.guardian.in/cdn/shop/articles/What-Is-The-Impact-of-Multivitamins-On-Your-Body.jpg?v=1713937505&width=1000"
+              src="https://img.freepik.com/free-photo/colorful-pills-syringe_23-2147983123.jpg"
               alt="Colorful pills"
               fill
-              data-ai-hint="pills"
+              data-ai-hint="pills syringe"
               className="rounded-xl shadow-2xl object-cover"
             />
           </div>
