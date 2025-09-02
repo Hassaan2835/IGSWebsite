@@ -7,7 +7,7 @@ export default function AboutPage() {
     <div className="bg-background">
       <section className="py-20 md:py-32 bg-primary/10">
         <div className="container mx-auto px-4 md:px-6 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight">About MediCatalog</h1>
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight">About IGS Health Care</h1>
           <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
             Our commitment to natural medicine, quality, and community health.
           </p>
@@ -18,7 +18,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center">
           <div>
             <Image
-              src="https://picsum.photos/600/500"
+              src="https://www.guardian.in/cdn/shop/articles/What-Is-The-Impact-of-Multivitamins-On-Your-Body.jpg?v=1713937505&width=1000"
               alt="Team discussing"
               width={600}
               height={500}

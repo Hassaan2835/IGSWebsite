@@ -25,8 +25,8 @@ export default function ContactPage() {
                 <div>
                   <h3 className="text-xl font-semibold">Email</h3>
                   <p className="text-muted-foreground">Send us an email for inquiries.</p>
-                  <a href="mailto:inquiries@medicatalog.com" className="text-primary hover:underline">
-                    inquiries@medicatalog.com
+                  <a href="mailto:inquiries@igshealthcare.com" className="text-primary hover:underline">
+                    inquiries@igshealthcare.com
                   </a>
                 </div>
               </div>

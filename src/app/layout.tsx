@@ -5,8 +5,8 @@ import { Footer } from '@/components/common/footer';
 import { Toaster } from "@/components/ui/toaster"
 
 export const metadata: Metadata = {
-  title: 'MediCatalog - Your Health, Our Priority',
-  description: 'Explore a wide range of healthcare products from MediCatalog. We are committed to providing natural, effective solutions for your well-being.',
+  title: 'IGS Health Care - Your Health, Our Priority',
+  description: 'Explore a wide range of healthcare products from IGS Health Care. We are committed to providing natural, effective solutions for your well-being.',
 };
 
 export default function RootLayout({

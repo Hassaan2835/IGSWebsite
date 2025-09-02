@@ -74,7 +74,7 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center">
            <div className="relative h-64 md:h-auto order-last md:order-first">
              <Image
-              src="https://picsum.photos/600/450"
+              src="https://www.guardian.in/cdn/shop/articles/What-Is-The-Impact-of-Multivitamins-On-Your-Body.jpg?v=1713937505&width=1000"
               alt="A modern research laboratory"
               width={600}
               height={450}

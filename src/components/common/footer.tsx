@@ -9,7 +9,7 @@ export function Footer() {
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-2">
               <HeartPulse className="h-6 w-6 text-primary" />
-              <span className="text-xl font-bold">MediCatalog</span>
+              <span className="text-xl font-bold">IGS Health Care</span>
             </Link>
             <p className="text-sm text-muted-foreground">
               Your trusted partner in natural healthcare and well-being.
@@ -41,7 +41,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-8 border-t pt-6 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} MediCatalog. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} IGS Health Care. All rights reserved.</p>
         </div>
       </div>
     </footer>

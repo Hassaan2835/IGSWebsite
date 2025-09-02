@@ -23,7 +23,7 @@ export function Header() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2" onClick={() => setIsMenuOpen(false)}>
           <HeartPulse className="h-6 w-6 text-primary" />
-          <span className="text-xl font-bold text-primary-foreground-dark">MediCatalog</span>
+          <span className="text-xl font-bold text-primary-foreground-dark">IGS Health Care</span>
         </Link>
         <nav className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
