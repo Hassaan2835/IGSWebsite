@@ -280,9 +280,9 @@ export const products: Product[] = [
   },
   {
     id: 'prod-005',
-    name: 'Liva-Trim',
+    name: 'IGS-SLIM',
     category: 'weight-loss-liver',
-    image: 'https://picsum.photos/400/400',
+    image: 'https://uploads.onecompiler.io/43vh7ked9/43vjbf8wf/IMG-20250722-WA0035.png',
     dataAiHint: 'healthy liver',
     shortDescription: 'Dual-action formula for weight management and liver detox.',
     originalDescription: 'Liva-Trim supports the body’s natural fat-burning processes while also promoting liver health and detoxification pathways.',
