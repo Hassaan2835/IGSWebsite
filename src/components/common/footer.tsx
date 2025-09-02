@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { HeartPulse, Github, Twitter, Linkedin } from 'lucide-react';
+import Image from 'next/image';
+import { Github, Twitter, Linkedin } from 'lucide-react';
 
 export function Footer() {
   return (
@@ -8,7 +9,7 @@ export function Footer() {
         <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-2">
-              <HeartPulse className="h-6 w-6 text-primary" />
+              <Image src="https://uploads.onecompiler.io/43vh7ked9/43vj7vcae/Logo_IGS_Health_Care-removebg-preview.png" alt="IGS Health Care Logo" width={32} height={32} className="rounded-sm" />
               <span className="text-xl font-bold">IGS Health Care</span>
             </Link>
             <p className="text-sm text-muted-foreground">

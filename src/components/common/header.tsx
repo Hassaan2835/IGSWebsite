@@ -1,8 +1,9 @@
 "use client";
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { HeartPulse, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
@@ -21,8 +22,8 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
-        <Link href="/" className="flex items-center gap-2" onClick={() => setIsMenuOpen(false)}>
-          <HeartPulse className="h-6 w-6 text-primary" />
+        <Link href="/" className="flex items-center gap-2">
+          <Image src="https://uploads.onecompiler.io/43vh7ked9/43vj7vcae/Logo_IGS_Health_Care-removebg-preview.png" alt="IGS Health Care Logo" width={32} height={32} className="rounded-sm" />
           <span className="text-xl font-bold text-primary-foreground-dark">IGS Health Care</span>
         </Link>
         <nav className="hidden md:flex items-center gap-6">

@@ -45,6 +45,12 @@ const nextConfig: NextConfig = {
         hostname: 'www.guardian.in',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'uploads.onecompiler.io',
+        port: '',
+        pathname: '/**',
       }
     ],
   },
