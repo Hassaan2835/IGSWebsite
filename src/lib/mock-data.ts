@@ -1,3 +1,4 @@
+
 export type ProductCategory = {
   id: 'vitamins' | 'joint-bone-health' | 'iron-deficiency' | 'colic-pain' | 'weight-loss-liver' | 'memory-booster';
   name: string;
@@ -223,9 +224,9 @@ export const products: Product[] = [
   },
   {
     id: 'prod-003',
-    name: 'Iron-Up',
+    name: 'IGS-L',
     category: 'iron-deficiency',
-    image: 'https://picsum.photos/400/400',
+    image: 'https://uploads.onecompiler.io/43vh7ked9/43vjbf8wf/IMG-20250722-WA0023.png',
     dataAiHint: 'energy boost',
     shortDescription: 'Gentle and effective iron supplement to fight fatigue.',
     originalDescription: 'A non-constipating iron formula designed for maximum absorption to help restore healthy iron levels and improve energy.',
@@ -237,9 +238,9 @@ export const products: Product[] = [
   },
   {
     id: 'prod-017',
-    name: 'Blood Builder',
+    name: 'Fer-IGS',
     category: 'iron-deficiency',
-    image: 'https://picsum.photos/411/411',
+    image: 'https://uploads.onecompiler.io/43vh7ked9/43vjbf8wf/IMG-20250722-WA0027.png',
     dataAiHint: 'iron supplement',
     shortDescription: 'Whole food iron supplement with synergistic cofactors.',
     originalDescription: 'Formulated with whole foods like beets and oranges, this supplement builds blood without nausea or constipation.',
@@ -251,9 +252,9 @@ export const products: Product[] = [
   },
   {
     id: 'prod-018',
-    name: 'Liquid Iron',
+    name: 'Heme-IGS',
     category: 'iron-deficiency',
-    image: 'https://picsum.photos/412/412',
+    image: 'https://uploads.onecompiler.io/43vh7ked9/43vjbbt7a/IMG-20250722-WA0016.png',
     dataAiHint: 'liquid supplement',
     shortDescription: 'A great-tasting liquid iron formula for easy absorption.',
     originalDescription: 'A plant-based liquid iron supplement that is gentle on the stomach and easy to take, with a pleasant fruit flavor.',
