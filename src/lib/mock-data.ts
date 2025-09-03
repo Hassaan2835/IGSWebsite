@@ -185,7 +185,7 @@ export const products: Product[] = [
   },
   {
     id: 'prod-jbh-004',
-    name: 'Clupik Plus',
+    name: 'Glupik Plus',
     category: 'joint-bone-health',
     image: 'https://picsum.photos/410/410',
     dataAiHint: 'joint tablets',
