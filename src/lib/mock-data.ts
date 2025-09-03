@@ -178,7 +178,7 @@ export const products: Product[] = [
     id: 'prod-jbh-003',
     name: 'C-Cell',
     category: 'joint-bone-health',
-    image: 'https://picsum.photos/408/408',
+    image: 'https://uploads.onecompiler.io/43vh7ked9/43vn8uky8/final.png',
     dataAiHint: 'natural supplement',
     shortDescription: 'A natural approach to joint and muscle comfort.',
     originalDescription: 'Naturalaf contains a blend of natural extracts known for their anti-inflammatory and analgesic properties.',
@@ -286,7 +286,7 @@ export const products: Product[] = [
     originalDescription: 'Dontive-5 provides safe and effective relief from colic pain, gas, and stomach discomfort in infants and children.',
     keyIngredients: 'Simethicone, Dill Oil, Fennel Oil',
     details: {
-      composition: 'Available in 12ml and 30ml dropper bottles.',
+      composition: 'Available in 12ml and 30ml bottles.',
       healthBenefits: 'Quickly relieves symptoms of colic, soothes the baby, and aids digestion.',
     },
   },
