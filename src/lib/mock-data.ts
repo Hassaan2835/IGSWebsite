@@ -127,7 +127,7 @@ export const products: Product[] = [
   },
   {
     id: 'prod-vit-006',
-    name: 'Nutrifit Drops',
+    name: 'multivit drops',
     category: 'vitamins',
     image: 'https://picsum.photos/403/403',
     dataAiHint: 'vitamin drops',
