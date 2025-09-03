@@ -62,7 +62,7 @@ export const products: Product[] = [
   // Vitamins
   {
     id: 'prod-vit-001',
-    name: 'My-Vita Syrup',
+    name: 'Ig-vit',
     category: 'vitamins',
     image: 'https://picsum.photos/400/400',
     dataAiHint: 'vitamin syrup',
@@ -76,7 +76,7 @@ export const products: Product[] = [
   },
   {
     id: 'prod-vit-002',
-    name: 'My-Vita Sup Syrup',
+    name: 'My-vita',
     category: 'vitamins',
     image: 'https://picsum.photos/401/401',
     dataAiHint: 'vitamin supplement',
@@ -90,7 +90,7 @@ export const products: Product[] = [
   },
   {
     id: 'prod-vit-003',
-    name: 'Ig-Vit Tablet',
+    name: 'My-vita Sup',
     category: 'vitamins',
     image: 'https://picsum.photos/402/402',
     dataAiHint: 'vitamin tablets',
@@ -104,7 +104,7 @@ export const products: Product[] = [
   },
   {
     id: 'prod-vit-004',
-    name: 'multivit drops',
+    name: 'G-Austin G-10',
     category: 'vitamins',
     image: 'https://picsum.photos/403/403',
     dataAiHint: 'vitamin drops',
@@ -118,7 +118,7 @@ export const products: Product[] = [
   },
   {
     id: 'prod-vit-005',
-    name: 'G-Austin G-10 (Soft Gel)',
+    name: 'Ieco-10',
     category: 'vitamins',
     image: 'https://picsum.photos/404/404',
     dataAiHint: 'softgel capsules',
@@ -132,7 +132,7 @@ export const products: Product[] = [
   },
   {
     id: 'prod-vit-006',
-    name: 'Ieco-10 Tablet (Box)',
+    name: 'multivit drops',
     category: 'vitamins',
     image: 'https://picsum.photos/405/405',
     dataAiHint: 'coenzyme q10',
@@ -148,7 +148,7 @@ export const products: Product[] = [
   // Joint and Bone Health
   {
     id: 'prod-jbh-001',
-    name: 'Ig-cal Drop (30 ml)',
+    name: 'Ig-cal Plus',
     category: 'joint-bone-health',
     image: 'https://picsum.photos/406/406',
     dataAiHint: 'calcium drops',
@@ -162,7 +162,7 @@ export const products: Product[] = [
   },
   {
     id: 'prod-jbh-002',
-    name: 'Ig-cal Plus Sachet',
+    name: 'Naturacal Sachet',
     category: 'joint-bone-health',
     image: 'https://picsum.photos/407/407',
     dataAiHint: 'health sachet',
@@ -176,7 +176,7 @@ export const products: Product[] = [
   },
   {
     id: 'prod-jbh-003',
-    name: 'Naturacal Sachet',
+    name: 'C-Cell',
     category: 'joint-bone-health',
     image: 'https://picsum.photos/408/408',
     dataAiHint: 'natural supplement',
@@ -190,7 +190,7 @@ export const products: Product[] = [
   },
   {
     id: 'prod-jbh-004',
-    name: 'C-Cell Syrup',
+    name: 'Glupik Plus',
     category: 'joint-bone-health',
     image: 'https://picsum.photos/409/409',
     dataAiHint: 'health syrup',
@@ -204,7 +204,7 @@ export const products: Product[] = [
   },
   {
     id: 'prod-jbh-005',
-    name: 'Glupik Plus',
+    name: 'Ig-cal Sup',
     category: 'joint-bone-health',
     image: 'https://picsum.photos/410/410',
     dataAiHint: 'joint tablets',
@@ -294,7 +294,7 @@ export const products: Product[] = [
   // Weight Loss-Liver
   {
     id: 'prod-wll-001',
-    name: 'IGS-SLIM',
+    name: 'UltraCare Plus',
     category: 'weight-loss-liver',
     image: 'https://uploads.onecompiler.io/43vh7ked9/43vjbf8wf/IMG-20250722-WA0035.png',
     dataAiHint: 'liver support',
