@@ -58,7 +58,7 @@ export const products: Product[] = [
     id: 'prod-001',
     name: 'IGS-G GOLD',
     category: 'vitamins',
-    image: 'https://uploads.onecompiler.io/43vh7ked9/43vjbf8wf/IMG-20250722-WA0020.png',
+    image: 'https://uploads.onecompiler.io/43vh7ked9/43vjbf8wf/IMG-20250722-WA0026.png',
     dataAiHint: 'vitamin bottle',
     shortDescription: 'A complete multivitamin for daily energy and vitality.',
     originalDescription: 'VitaBoost Daily is a standard multivitamin tablet that provides essential vitamins and minerals for overall health. It is designed for daily use.',
