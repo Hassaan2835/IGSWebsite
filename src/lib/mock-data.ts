@@ -230,6 +230,34 @@ export const products: Product[] = [
       healthBenefits: 'Provides rapid support for bone health and helps in maintaining calcium balance.',
     },
   },
+  {
+    id: 'prod-jbh-007',
+    name: 'Quick-D',
+    category: 'joint-bone-health',
+    image: 'https://picsum.photos/411/411',
+    dataAiHint: 'instant relief',
+    shortDescription: 'Quick-dissolving sachet for bone and joint health.',
+    originalDescription: 'A convenient and fast-acting formula to support calcium levels and bone strength.',
+    keyIngredients: 'Calcium, Vitamin D3, Vitamin K2-7',
+    details: {
+      composition: 'Instantly dissolving powder for quick absorption.',
+      healthBenefits: 'Provides rapid support for bone health and helps in maintaining calcium balance.',
+    },
+  },
+  {
+    id: 'prod-jbh-008',
+    name: 'Quick-D',
+    category: 'joint-bone-health',
+    image: 'https://picsum.photos/411/411',
+    dataAiHint: 'instant relief',
+    shortDescription: 'Quick-dissolving sachet for bone and joint health.',
+    originalDescription: 'A convenient and fast-acting formula to support calcium levels and bone strength.',
+    keyIngredients: 'Calcium, Vitamin D3, Vitamin K2-7',
+    details: {
+      composition: 'Instantly dissolving powder for quick absorption.',
+      healthBenefits: 'Provides rapid support for bone health and helps in maintaining calcium balance.',
+    },
+  },
 
   // Iron Deficiency
   {
