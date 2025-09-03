@@ -47,11 +47,6 @@ export const productCategories: ProductCategory[] = [
     description: 'Support for healthy weight management and liver function.',
   },
   {
-    id: 'immune-booster',
-    name: 'Immune Booster',
-    description: 'Strengthen your body\'s natural defenses.'
-  },
-  {
     id: 'memory-booster',
     name: 'Memory Booster',
     description: 'Enhance cognitive function and memory.',
@@ -62,35 +57,7 @@ export const products: Product[] = [
   // Vitamins
   {
     id: 'prod-vit-001',
-    name: 'My-Vita Syrup',
-    category: 'vitamins',
-    image: 'https://picsum.photos/400/400',
-    dataAiHint: 'vitamin syrup',
-    shortDescription: 'A comprehensive multivitamin syrup for all ages.',
-    originalDescription: 'My-Vita Syrup provides a balanced blend of essential vitamins to support daily health, energy, and well-being.',
-    keyIngredients: 'Vitamin A, Vitamin C, Vitamin D, B-Complex',
-    details: {
-      composition: 'Each 5ml contains a full spectrum of essential vitamins.',
-      healthBenefits: 'Supports immune function, enhances energy levels, and promotes overall vitality.',
-    },
-  },
-  {
-    id: 'prod-vit-002',
-    name: 'My-Vita Sup Syrup',
-    category: 'vitamins',
-    image: 'https://picsum.photos/401/401',
-    dataAiHint: 'vitamin supplement',
-    shortDescription: 'An advanced supplemental vitamin syrup.',
-    originalDescription: 'A superior formulation of My-Vita syrup with added minerals for enhanced nutritional support.',
-    keyIngredients: 'Multivitamins, Zinc, Iron',
-    details: {
-      composition: 'Enhanced multivitamin and mineral complex in a syrup base.',
-      healthBenefits: 'Boosts immunity, supports growth, and aids in recovery.',
-    },
-  },
-  {
-    id: 'prod-vit-003',
-    name: 'Ig-Vit Tablet',
+    name: 'Ig-vit',
     category: 'vitamins',
     image: 'https://picsum.photos/402/402',
     dataAiHint: 'vitamin tablets',
@@ -103,22 +70,36 @@ export const products: Product[] = [
     },
   },
   {
-    id: 'prod-vit-004',
-    name: 'Multivit Drops',
+    id: 'prod-vit-002',
+    name: 'My-vita',
     category: 'vitamins',
-    image: 'https://picsum.photos/403/403',
-    dataAiHint: 'vitamin drops',
-    shortDescription: 'Easy-to-administer multivitamin drops for infants.',
-    originalDescription: 'Specially formulated drops to provide essential vitamins for the healthy growth and development of infants.',
-    keyIngredients: 'Vitamin A, Vitamin C, Vitamin D',
+    image: 'https://picsum.photos/400/400',
+    dataAiHint: 'vitamin syrup',
+    shortDescription: 'A comprehensive multivitamin syrup for all ages.',
+    originalDescription: 'My-Vita Syrup provides a balanced blend of essential vitamins to support daily health, energy, and well-being.',
+    keyIngredients: 'Vitamin A, Vitamin C, Vitamin D, B-Complex',
     details: {
-      composition: 'Concentrated vitamin drops for easy dosage.',
-      healthBenefits: 'Supports bone development, immune function, and overall growth in infants.',
+      composition: 'Each 5ml contains a full spectrum of essential vitamins.',
+      healthBenefits: 'Supports immune function, enhances energy levels, and promotes overall vitality.',
     },
   },
   {
-    id: 'prod-vit-005',
-    name: 'G-Austin G-10 (Soft Gel)',
+    id: 'prod-vit-003',
+    name: 'My-vita Sup',
+    category: 'vitamins',
+    image: 'https://picsum.photos/401/401',
+    dataAiHint: 'vitamin supplement',
+    shortDescription: 'An advanced supplemental vitamin syrup.',
+    originalDescription: 'A superior formulation of My-Vita syrup with added minerals for enhanced nutritional support.',
+    keyIngredients: 'Multivitamins, Zinc, Iron',
+    details: {
+      composition: 'Enhanced multivitamin and mineral complex in a syrup base.',
+      healthBenefits: 'Boosts immunity, supports growth, and aids in recovery.',
+    },
+  },
+  {
+    id: 'prod-vit-004',
+    name: 'G-Austin G-10',
     category: 'vitamins',
     image: 'https://picsum.photos/404/404',
     dataAiHint: 'softgel capsules',
@@ -130,9 +111,9 @@ export const products: Product[] = [
       healthBenefits: 'Fights free radicals, boosts energy, and supports cardiovascular health.',
     },
   },
-    {
-    id: 'prod-vit-006',
-    name: 'Ieco-10 Tablet (Box)',
+  {
+    id: 'prod-vit-005',
+    name: 'Ieco-10',
     category: 'vitamins',
     image: 'https://picsum.photos/405/405',
     dataAiHint: 'coenzyme q10',
@@ -144,25 +125,25 @@ export const products: Product[] = [
       healthBenefits: 'Supports cardiovascular health, enhances energy production, and provides antioxidant benefits.',
     },
   },
+  {
+    id: 'prod-vit-006',
+    name: 'Nutrifit Drops',
+    category: 'vitamins',
+    image: 'https://picsum.photos/403/403',
+    dataAiHint: 'vitamin drops',
+    shortDescription: 'Easy-to-administer multivitamin drops for infants.',
+    originalDescription: 'Specially formulated drops to provide essential vitamins for the healthy growth and development of infants.',
+    keyIngredients: 'Vitamin A, Vitamin C, Vitamin D',
+    details: {
+      composition: 'Concentrated vitamin drops for easy dosage.',
+      healthBenefits: 'Supports bone development, immune function, and overall growth in infants.',
+    },
+  },
 
   // Joint and Bone Health
   {
     id: 'prod-jbh-001',
-    name: 'Ig-cal Drop (30 ml)',
-    category: 'joint-bone-health',
-    image: 'https://picsum.photos/406/406',
-    dataAiHint: 'calcium drops',
-    shortDescription: 'Calcium and Vitamin D drops for infants and children.',
-    originalDescription: 'Ig-cal Drops provide essential calcium and Vitamin D for building strong bones and teeth in growing children.',
-    keyIngredients: 'Calcium, Vitamin D3',
-    details: {
-      composition: 'Each ml contains elemental Calcium and Vitamin D3.',
-      healthBenefits: 'Crucial for bone formation, density, and overall skeletal health in children.',
-    },
-  },
-   {
-    id: 'prod-jbh-002',
-    name: 'Ig-cal Plus Sachet',
+    name: 'Ig-cal Plus',
     category: 'joint-bone-health',
     image: 'https://picsum.photos/407/407',
     dataAiHint: 'health sachet',
@@ -174,8 +155,8 @@ export const products: Product[] = [
       healthBenefits: 'Promotes bone density, supports joint health, and reduces the risk of osteoporosis.',
     },
   },
-   {
-    id: 'prod-jbh-003',
+  {
+    id: 'prod-jbh-002',
     name: 'Naturalaf Sachet',
     category: 'joint-bone-health',
     image: 'https://picsum.photos/408/408',
@@ -188,9 +169,9 @@ export const products: Product[] = [
       healthBenefits: 'Helps reduce joint pain and inflammation, improving mobility and comfort.',
     },
   },
-   {
-    id: 'prod-jbh-004',
-    name: 'C-Cell Syrup',
+  {
+    id: 'prod-jbh-003',
+    name: 'C-Cell',
     category: 'joint-bone-health',
     image: 'https://picsum.photos/409/409',
     dataAiHint: 'health syrup',
@@ -202,9 +183,9 @@ export const products: Product[] = [
       healthBenefits: 'Supports cartilage repair, reduces joint stiffness, and improves flexibility.',
     },
   },
-   {
-    id: 'prod-jbh-005',
-    name: 'Clupik Plus Tablet (20s)',
+  {
+    id: 'prod-jbh-004',
+    name: 'Clupik Plus',
     category: 'joint-bone-health',
     image: 'https://picsum.photos/410/410',
     dataAiHint: 'joint tablets',
@@ -216,9 +197,23 @@ export const products: Product[] = [
       healthBenefits: 'Reduces pain and inflammation, protects cartilage, and improves joint function.',
     },
   },
-   {
+  {
+    id: 'prod-jbh-005',
+    name: 'Ig-cal Sup',
+    category: 'joint-bone-health',
+    image: 'https://picsum.photos/406/406',
+    dataAiHint: 'calcium drops',
+    shortDescription: 'Calcium and Vitamin D drops for all ages.',
+    originalDescription: 'Ig-cal provides essential calcium and Vitamin D for building and maintaining strong bones and teeth.',
+    keyIngredients: 'Calcium, Vitamin D3',
+    details: {
+      composition: 'Each serving contains elemental Calcium and Vitamin D3.',
+      healthBenefits: 'Crucial for bone formation, density, and overall skeletal health.',
+    },
+  },
+  {
     id: 'prod-jbh-006',
-    name: 'Gripcal Insta Sachet (20s)',
+    name: 'Gripcal Insta (sachet)',
     category: 'joint-bone-health',
     image: 'https://picsum.photos/411/411',
     dataAiHint: 'instant relief',
@@ -234,7 +229,7 @@ export const products: Product[] = [
   // Iron Deficiency
   {
     id: 'prod-id-001',
-    name: 'Ig-Ferr Syrup (120 ml & 200 ml)',
+    name: 'Ig-Ferr Syp',
     category: 'iron-deficiency',
     image: 'https://picsum.photos/412/412',
     dataAiHint: 'iron syrup',
@@ -248,7 +243,7 @@ export const products: Product[] = [
   },
   {
     id: 'prod-id-002',
-    name: 'Optifer Syrup (200 ml)',
+    name: 'Optifer Syp',
     category: 'iron-deficiency',
     image: 'https://picsum.photos/413/413',
     dataAiHint: 'optimal iron',
@@ -262,7 +257,7 @@ export const products: Product[] = [
   },
   {
     id: 'prod-id-003',
-    name: 'Cifor-A Drops (15 ml)',
+    name: 'Cifor-A Drops',
     category: 'iron-deficiency',
     image: 'https://picsum.photos/414/414',
     dataAiHint: 'iron drops',
@@ -278,7 +273,7 @@ export const products: Product[] = [
   // Colic Pain
   {
     id: 'prod-cp-001',
-    name: 'Dontive-S Drops (12 ml & 30 ml)',
+    name: 'Dontive-S',
     category: 'colic-pain',
     image: 'https://picsum.photos/415/415',
     dataAiHint: 'infant relief',
@@ -294,7 +289,7 @@ export const products: Product[] = [
   // Weight Loss-Liver
   {
     id: 'prod-wll-001',
-    name: 'Ultra Care Plus (30’s Tablet)',
+    name: 'Ultra Care Plus',
     category: 'weight-loss-liver',
     image: 'https://picsum.photos/416/416',
     dataAiHint: 'liver support',
@@ -306,22 +301,4 @@ export const products: Product[] = [
       healthBenefits: 'Protects liver cells, enhances detoxification processes, and supports healthy weight.',
     },
   },
-  
-  // Immune Booster
-  {
-    id: 'prod-ib-001',
-    name: 'Justim Syrup (120 ml)',
-    category: 'immune-booster',
-    image: 'https://picsum.photos/417/417',
-    dataAiHint: 'immune support',
-    shortDescription: 'A natural syrup to strengthen the immune system.',
-    originalDescription: 'Justim Syrup contains a blend of powerful herbs known to enhance the body\'s immune response.',
-    keyIngredients: 'Echinacea, Elderberry, Vitamin C, Zinc',
-    details: {
-      composition: 'A 120ml bottle of immune-boosting herbal syrup.',
-      healthBenefits: 'Helps strengthen immunity, reduces the duration of common colds, and protects against infections.',
-    },
-  },
 ];
-
-    
