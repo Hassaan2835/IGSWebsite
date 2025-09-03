@@ -309,7 +309,7 @@ export const products: Product[] = [
   // Immune Booster
   {
     id: 'prod-ib-001',
-    name: 'Justim Syrup (120 ml)',
+    name: 'Justin Syp (120ml)',
     category: 'immune-booster',
     image: 'https://picsum.photos/412/412',
     dataAiHint: 'immune syrup',
