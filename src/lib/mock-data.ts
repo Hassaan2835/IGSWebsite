@@ -248,7 +248,7 @@ export const products: Product[] = [
     id: 'prod-jbh-008',
     name: 'Quick-D Insta Shot (Mango Flavour)',
     category: 'joint-bone-health',
-    image: 'https://picsum.photos/411/411',
+    image: 'https://uploads.onecompiler.io/43vh7ked9/43vn8uky8/IMG-20250722-WA0029-removebg-preview.png',
     dataAiHint: 'instant relief',
     shortDescription: 'Quick-dissolving sachet for bone and joint health.',
     originalDescription: 'A convenient and fast-acting formula to support calcium levels and bone strength.',
