@@ -1,6 +1,6 @@
 
 export type ProductCategory = {
-  id: 'vitamins' | 'joint-bone-health' | 'iron-deficiency' | 'colic-pain' | 'weight-loss-liver' | 'memory-booster';
+  id: 'vitamins' | 'joint-bone-health' | 'iron-deficiency' | 'colic-pain' | 'weight-loss-liver' | 'memory-booster' | 'immune-booster';
   name: string;
   description: string;
 };
@@ -47,6 +47,11 @@ export const productCategories: ProductCategory[] = [
     description: 'Support for healthy weight management and liver function.',
   },
   {
+    id: 'immune-booster',
+    name: 'Immune Booster',
+    description: 'Boost your immune system and stay healthy.',
+  },
+  {
     id: 'memory-booster',
     name: 'Memory Booster',
     description: 'Enhance cognitive function and memory.',
@@ -57,21 +62,7 @@ export const products: Product[] = [
   // Vitamins
   {
     id: 'prod-vit-001',
-    name: 'Ig-vit',
-    category: 'vitamins',
-    image: 'https://uploads.onecompiler.io/43vh7ked9/43vjbf8wf/IMG-20250722-WA0026.png',
-    dataAiHint: 'vitamin tablets',
-    shortDescription: 'A daily multivitamin tablet for adults.',
-    originalDescription: 'Ig-Vit tablets are designed to meet the daily nutritional needs of adults, supporting a healthy and active lifestyle.',
-    keyIngredients: 'Vitamin C, Vitamin E, B-Vitamins, Selenium',
-    details: {
-      composition: 'One tablet provides 100% RDA of most essential vitamins and minerals.',
-      healthBenefits: 'Promotes energy, supports heart health, and provides antioxidant protection.',
-    },
-  },
-  {
-    id: 'prod-vit-002',
-    name: 'My-vita',
+    name: 'My-Vita Syrup',
     category: 'vitamins',
     image: 'https://picsum.photos/400/400',
     dataAiHint: 'vitamin syrup',
@@ -84,8 +75,8 @@ export const products: Product[] = [
     },
   },
   {
-    id: 'prod-vit-003',
-    name: 'My-vita Sup',
+    id: 'prod-vit-002',
+    name: 'My-Vita Sup Syrup',
     category: 'vitamins',
     image: 'https://picsum.photos/401/401',
     dataAiHint: 'vitamin supplement',
@@ -98,35 +89,21 @@ export const products: Product[] = [
     },
   },
   {
+    id: 'prod-vit-003',
+    name: 'Ig-Vit Tablet',
+    category: 'vitamins',
+    image: 'https://picsum.photos/402/402',
+    dataAiHint: 'vitamin tablets',
+    shortDescription: 'A daily multivitamin tablet for adults.',
+    originalDescription: 'Ig-Vit tablets are designed to meet the daily nutritional needs of adults, supporting a healthy and active lifestyle.',
+    keyIngredients: 'Vitamin C, Vitamin E, B-Vitamins, Selenium',
+    details: {
+      composition: 'One tablet provides 100% RDA of most essential vitamins and minerals.',
+      healthBenefits: 'Promotes energy, supports heart health, and provides antioxidant protection.',
+    },
+  },
+  {
     id: 'prod-vit-004',
-    name: 'G-Austin G-10',
-    category: 'vitamins',
-    image: 'https://picsum.photos/404/404',
-    dataAiHint: 'softgel capsules',
-    shortDescription: 'A potent soft gel antioxidant formula.',
-    originalDescription: 'G-Austin G-10 provides a powerful blend of antioxidants in an easy-to-swallow soft gel capsule.',
-    keyIngredients: 'Ginseng, Green Tea Extract, Grape Seed Extract',
-    details: {
-      composition: 'Soft gel capsule containing a blend of 10 powerful antioxidants.',
-      healthBenefits: 'Fights free radicals, boosts energy, and supports cardiovascular health.',
-    },
-  },
-  {
-    id: 'prod-vit-005',
-    name: 'Ieco-10',
-    category: 'vitamins',
-    image: 'https://picsum.photos/405/405',
-    dataAiHint: 'coenzyme q10',
-    shortDescription: 'Coenzyme Q10 tablets for cellular energy.',
-    originalDescription: 'Ieco-10 contains Coenzyme Q10, a vital nutrient for cellular energy production and heart health.',
-    keyIngredients: 'Coenzyme Q10 (CoQ10)',
-    details: {
-      composition: 'Each tablet contains 100mg of Coenzyme Q10.',
-      healthBenefits: 'Supports cardiovascular health, enhances energy production, and provides antioxidant benefits.',
-    },
-  },
-  {
-    id: 'prod-vit-006',
     name: 'multivit drops',
     category: 'vitamins',
     image: 'https://picsum.photos/403/403',
@@ -139,11 +116,53 @@ export const products: Product[] = [
       healthBenefits: 'Supports bone development, immune function, and overall growth in infants.',
     },
   },
+  {
+    id: 'prod-vit-005',
+    name: 'G-Austin G-10 (Soft Gel)',
+    category: 'vitamins',
+    image: 'https://picsum.photos/404/404',
+    dataAiHint: 'softgel capsules',
+    shortDescription: 'A potent soft gel antioxidant formula.',
+    originalDescription: 'G-Austin G-10 provides a powerful blend of antioxidants in an easy-to-swallow soft gel capsule.',
+    keyIngredients: 'Ginseng, Green Tea Extract, Grape Seed Extract',
+    details: {
+      composition: 'Soft gel capsule containing a blend of 10 powerful antioxidants.',
+      healthBenefits: 'Fights free radicals, boosts energy, and supports cardiovascular health.',
+    },
+  },
+  {
+    id: 'prod-vit-006',
+    name: 'Ieco-10 Tablet (Box)',
+    category: 'vitamins',
+    image: 'https://picsum.photos/405/405',
+    dataAiHint: 'coenzyme q10',
+    shortDescription: 'Coenzyme Q10 tablets for cellular energy.',
+    originalDescription: 'Ieco-10 contains Coenzyme Q10, a vital nutrient for cellular energy production and heart health.',
+    keyIngredients: 'Coenzyme Q10 (CoQ10)',
+    details: {
+      composition: 'Each tablet contains 100mg of Coenzyme Q10.',
+      healthBenefits: 'Supports cardiovascular health, enhances energy production, and provides antioxidant benefits.',
+    },
+  },
 
   // Joint and Bone Health
   {
     id: 'prod-jbh-001',
-    name: 'Ig-cal Plus',
+    name: 'Ig-cal Drop (30 ml)',
+    category: 'joint-bone-health',
+    image: 'https://picsum.photos/406/406',
+    dataAiHint: 'calcium drops',
+    shortDescription: 'Calcium and Vitamin D drops for all ages.',
+    originalDescription: 'Ig-cal provides essential calcium and Vitamin D for building and maintaining strong bones and teeth.',
+    keyIngredients: 'Calcium, Vitamin D3',
+    details: {
+      composition: 'Each serving contains elemental Calcium and Vitamin D3.',
+      healthBenefits: 'Crucial for bone formation, density, and overall skeletal health.',
+    },
+  },
+  {
+    id: 'prod-jbh-002',
+    name: 'Ig-cal Plus Sachet',
     category: 'joint-bone-health',
     image: 'https://picsum.photos/407/407',
     dataAiHint: 'health sachet',
@@ -156,7 +175,7 @@ export const products: Product[] = [
     },
   },
   {
-    id: 'prod-jbh-002',
+    id: 'prod-jbh-003',
     name: 'Naturacal Sachet',
     category: 'joint-bone-health',
     image: 'https://picsum.photos/408/408',
@@ -170,8 +189,8 @@ export const products: Product[] = [
     },
   },
   {
-    id: 'prod-jbh-003',
-    name: 'C-Cell',
+    id: 'prod-jbh-004',
+    name: 'C-Cell Syrup',
     category: 'joint-bone-health',
     image: 'https://picsum.photos/409/409',
     dataAiHint: 'health syrup',
@@ -184,7 +203,7 @@ export const products: Product[] = [
     },
   },
   {
-    id: 'prod-jbh-004',
+    id: 'prod-jbh-005',
     name: 'Glupik Plus',
     category: 'joint-bone-health',
     image: 'https://picsum.photos/410/410',
@@ -195,20 +214,6 @@ export const products: Product[] = [
     details: {
       composition: 'A combination tablet for comprehensive joint care.',
       healthBenefits: 'Reduces pain and inflammation, protects cartilage, and improves joint function.',
-    },
-  },
-  {
-    id: 'prod-jbh-005',
-    name: 'Ig-cal Sup',
-    category: 'joint-bone-health',
-    image: 'https://picsum.photos/406/406',
-    dataAiHint: 'calcium drops',
-    shortDescription: 'Calcium and Vitamin D drops for all ages.',
-    originalDescription: 'Ig-cal provides essential calcium and Vitamin D for building and maintaining strong bones and teeth.',
-    keyIngredients: 'Calcium, Vitamin D3',
-    details: {
-      composition: 'Each serving contains elemental Calcium and Vitamin D3.',
-      healthBenefits: 'Crucial for bone formation, density, and overall skeletal health.',
     },
   },
   {
@@ -257,7 +262,7 @@ export const products: Product[] = [
   },
   {
     id: 'prod-id-003',
-    name: 'Cifor-A Drops',
+    name: 'Cilof - A Drops',
     category: 'iron-deficiency',
     image: 'https://uploads.onecompiler.io/43vh7ked9/43vjbbt7a/IMG-20250722-WA0016.png',
     dataAiHint: 'iron drops',
@@ -289,7 +294,7 @@ export const products: Product[] = [
   // Weight Loss-Liver
   {
     id: 'prod-wll-001',
-    name: 'Ultra Care Plus',
+    name: 'IGS-SLIM',
     category: 'weight-loss-liver',
     image: 'https://uploads.onecompiler.io/43vh7ked9/43vjbf8wf/IMG-20250722-WA0035.png',
     dataAiHint: 'liver support',
@@ -299,6 +304,21 @@ export const products: Product[] = [
     details: {
       composition: 'A pack of 30 tablets for a one-month supply.',
       healthBenefits: 'Protects liver cells, enhances detoxification processes, and supports healthy weight.',
+    },
+  },
+  // Immune Booster
+  {
+    id: 'prod-ib-001',
+    name: 'Justim Syrup (120 ml)',
+    category: 'immune-booster',
+    image: 'https://picsum.photos/412/412',
+    dataAiHint: 'immune syrup',
+    shortDescription: 'A natural syrup to boost your immune system.',
+    originalDescription: 'Justim Syrup is a powerful blend of herbs and nutrients designed to strengthen your immune response and protect against illness.',
+    keyIngredients: 'Echinacea, Vitamin C, Zinc',
+    details: {
+      composition: 'A 120ml syrup with a blend of immune-boosting ingredients.',
+      healthBenefits: 'Enhances immune function, reduces the duration of colds, and provides antioxidant support.',
     },
   },
 ];
