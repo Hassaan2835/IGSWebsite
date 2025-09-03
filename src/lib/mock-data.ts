@@ -339,7 +339,7 @@ export const products: Product[] = [
     id: 'prod-ib-001',
     name: 'Justin Syp (120ml)',
     category: 'immune-booster',
-    image: 'https://picsum.photos/412/412',
+    image: 'https://uploads.onecompiler.io/43vh7ked9/43vn8uky8/IMG-20250722-WA0026-removebg-preview.png',
     dataAiHint: 'immune syrup',
     shortDescription: 'A natural syrup to boost your immune system.',
     originalDescription: 'Justim Syrup is a powerful blend of herbs and nutrients designed to strengthen your immune response and protect against illness.',
