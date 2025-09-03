@@ -150,7 +150,7 @@ export const products: Product[] = [
     id: 'prod-jbh-001',
     name: 'Ig-cal Plus',
     category: 'joint-bone-health',
-    image: 'https://picsum.photos/406/406',
+    image: 'https://uploads.onecompiler.io/43vh7ked9/43vn8uky8/IMG-20250722-WA0020-removebg-preview.png',
     dataAiHint: 'calcium drops',
     shortDescription: 'Calcium and Vitamin D drops for all ages.',
     originalDescription: 'Ig-cal provides essential calcium and Vitamin D for building and maintaining strong bones and teeth.',
