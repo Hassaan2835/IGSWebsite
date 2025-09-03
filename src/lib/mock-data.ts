@@ -232,7 +232,7 @@ export const products: Product[] = [
   },
   {
     id: 'prod-jbh-007',
-    name: 'Quick-D Insta Shot (Mango Flavour)',
+    name: 'Quick-D Insta Shot (Strawberry Flavour)',
     category: 'joint-bone-health',
     image: 'https://picsum.photos/411/411',
     dataAiHint: 'instant relief',
