@@ -157,7 +157,7 @@ export const products: Product[] = [
   },
   {
     id: 'prod-jbh-002',
-    name: 'Naturalaf Sachet',
+    name: 'Naturacal Sachet',
     category: 'joint-bone-health',
     image: 'https://picsum.photos/408/408',
     dataAiHint: 'natural supplement',
