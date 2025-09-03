@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Pill, Shield, Bone, Brain, Droplet, Weight, Baby } from 'lucide-react';
+import { Pill, Shield, Bone, Brain, Droplet, Weight, Baby, HeartPulse } from 'lucide-react';
 import { productCategories } from '@/lib/mock-data';
 import { ReactElement } from 'react';
 
@@ -13,6 +13,7 @@ const categoryIcons: { [key: string]: ReactElement } = {
   'iron-deficiency': <Droplet className="w-8 h-8" />,
   'colic-pain': <Baby className="w-8 h-8" />,
   'weight-loss-liver': <Weight className="w-8 h-8" />,
+  'immune-booster': <HeartPulse className="w-8 h-8" />,
   'memory-booster': <Brain className="w-8 h-8" />,
 };
 
@@ -58,7 +59,7 @@ export default function Home() {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {productCategories.slice(0, 3).map((category) => (
+            {productCategories.slice(0, 6).map((category) => (
               <Card key={category.id} className="text-center hover:shadow-lg transition-shadow duration-300">
                 <CardHeader>
                   <div className="mx-auto bg-primary/10 rounded-full p-4 w-fit text-primary">
@@ -132,3 +133,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
