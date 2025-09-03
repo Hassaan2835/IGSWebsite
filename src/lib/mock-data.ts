@@ -1,6 +1,6 @@
 
 export type ProductCategory = {
-  id: 'vitamins' | 'joint-bone-health' | 'iron-deficiency' | 'colic-pain' | 'weight-loss-liver' | 'immune-booster' | 'memory-booster';
+  id: 'vitamins' | 'joint-bone-health' | 'iron-deficiency' | 'colic-pain' | 'weight-loss-liver' | 'memory-booster';
   name: string;
   description: string;
 };
@@ -213,11 +213,11 @@ export const products: Product[] = [
   },
   {
     id: 'prod-jbh-006',
-    name: 'Gripcal Insta (sachet)',
+    name: 'Quick-D',
     category: 'joint-bone-health',
     image: 'https://picsum.photos/411/411',
     dataAiHint: 'instant relief',
-    shortDescription: 'Instant-dissolving sachet for bone and joint health.',
+    shortDescription: 'Quick-dissolving sachet for bone and joint health.',
     originalDescription: 'A convenient and fast-acting formula to support calcium levels and bone strength.',
     keyIngredients: 'Calcium, Vitamin D3, Vitamin K2-7',
     details: {
