@@ -90,7 +90,7 @@ export const products: Product[] = [
   },
   {
     id: 'prod-vit-003',
-    name: 'My-vita Sup',
+    name: 'My-Vita Syp',
     category: 'vitamins',
     image: 'https://picsum.photos/402/402',
     dataAiHint: 'vitamin tablets',
