@@ -40,11 +40,11 @@ export default function Home() {
           </div>
           <div className="relative h-64 md:h-96">
              <Image
-              src="https://img.freepik.com/free-photo/colorful-pills-syringe_23-2147983123.jpg"
-              alt="Colorful pills"
+              src="https://uploads.onecompiler.io/43vh7ked9/43vj7vcae/Logo_IGS_Health_Care-removebg-preview.png"
+              alt="IGS Health Care Logo"
               fill
-              data-ai-hint="pills syringe"
-              className="rounded-xl shadow-2xl object-cover"
+              data-ai-hint="company logo"
+              className="rounded-xl shadow-2xl object-contain"
             />
           </div>
         </div>
