@@ -86,3 +86,12 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  img {
+    @apply transition-transform duration-300 ease-in-out;
+  }
+  img:hover {
+    @apply scale-105;
+  }
+}
