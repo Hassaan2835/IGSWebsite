@@ -16,7 +16,7 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
     <div className="container mx-auto px-4 py-12 md:px-6 md:py-16">
       <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
         <div className="flex justify-center items-start">
-          <div className="relative aspect-square w-full max-w-md rounded-lg overflow-hidden shadow-lg">
+          <div className="relative aspect-[4/5] w-full max-w-md rounded-lg overflow-hidden shadow-lg">
             <Image
               src={product.image}
               alt={product.name}

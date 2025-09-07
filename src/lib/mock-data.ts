@@ -62,7 +62,7 @@ export const products: Product[] = [
   // Vitamins
   {
     id: 'prod-vit-001',
-    name: 'Ig-vit',
+    name: 'IG-VIT',
     category: 'vitamins',
     image: 'https://uploads.onecompiler.io/43vh7ked9/43w23y7tz/IMG-20250722-WA0025.jpg',
     dataAiHint: 'vitamin syrup',
