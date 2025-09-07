@@ -64,7 +64,7 @@ export const products: Product[] = [
     id: 'prod-vit-001',
     name: 'Ig-vit',
     category: 'vitamins',
-    image: 'https://uploads.onecompiler.io/43vh7ked9/43vn8uky8/IMG-20250722-WA0025-removebg-preview.png',
+    image: 'https://uploads.onecompiler.io/43vh7ked9/43w23y7tz/IMG-20250722-WA0025.jpg',
     dataAiHint: 'vitamin syrup',
     shortDescription: 'A comprehensive multivitamin syrup for all ages.',
     originalDescription: 'My-Vita Syrup provides a balanced blend of essential vitamins to support daily health, energy, and well-being.',
