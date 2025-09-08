@@ -7,7 +7,7 @@ import { notFound } from 'next/navigation';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { EnhanceDescriptionTool } from '@/components/enhance-description-tool';
-import { useState } from 'react';
+import { useState, use } from 'react';
 import { Star, StarHalf, Minus, Plus } from 'lucide-react';
 import Link from 'next/link';
 
@@ -30,8 +30,9 @@ function QuantityInput() {
   );
 }
 
-export default function ProductDetailPage({ params }: { params: { id: string } }) {
-  const product = products.find((p) => p.id === params.id);
+export default function ProductDetailPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = use(params);
+  const product = products.find((p) => p.id === id);
   const [activeImage, setActiveImage] = useState(product?.image);
 
   if (!product) {
@@ -57,7 +58,7 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
       </div>
       <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
         <div className="flex flex-col items-center gap-4">
-          <div className="relative aspect-square w-full max-w-md rounded-lg overflow-hidden shadow-lg border">
+          <div className="relative aspect-[4/5] w-full max-w-md rounded-lg overflow-hidden shadow-lg border">
             <Image
               src={activeImage || product.image}
               alt={product.name}
