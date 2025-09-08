@@ -8,7 +8,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { EnhanceDescriptionTool } from '@/components/enhance-description-tool';
 import { useState, use } from 'react';
-import { Star, StarHalf, Minus, Plus } from 'lucide-react';
+import { Star, StarHalf, Minus, Plus, X } from 'lucide-react';
 import Link from 'next/link';
 
 function QuantityInput() {
@@ -34,6 +34,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
   const { id } = use(params);
   const product = products.find((p) => p.id === id);
   const [activeImage, setActiveImage] = useState(product?.image);
+  const [isImageModalOpen, setIsImageModalOpen] = useState(false);
 
   if (!product) {
     notFound();
@@ -58,7 +59,10 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
       </div>
       <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
         <div className="flex flex-col items-center gap-4">
-          <div className="relative aspect-[4/5] w-full max-w-md rounded-lg overflow-hidden shadow-lg border">
+          <div 
+            className="relative aspect-[4/5] w-full max-w-md rounded-lg overflow-hidden shadow-lg border cursor-pointer"
+            onClick={() => setIsImageModalOpen(true)}
+          >
             <Image
               src={activeImage || product.image}
               alt={product.name}
@@ -124,6 +128,29 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
 
         </div>
       </div>
+
+      {isImageModalOpen && (
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80"
+          onClick={() => setIsImageModalOpen(false)}
+        >
+          <div className="relative max-w-4xl max-h-[90vh] w-full p-4" onClick={e => e.stopPropagation()}>
+            <Image
+              src={activeImage || product.image}
+              alt={product.name}
+              width={800}
+              height={1000}
+              className="object-contain w-full h-full"
+            />
+            <button 
+              onClick={() => setIsImageModalOpen(false)}
+              className="absolute top-4 right-4 text-white bg-black/50 rounded-full p-2 hover:bg-black/80 transition-colors"
+            >
+              <X className="w-6 h-6" />
+            </button>
+          </div>
+        </div>
+      )}
 
       <div className="mt-16">
         <EnhanceDescriptionTool
