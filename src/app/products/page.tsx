@@ -2,7 +2,9 @@
 import { Suspense } from 'react';
 import { products, productCategories } from '@/lib/mock-data';
 import { ProductCard } from '@/components/product-card';
-import { ProductsSidebar } from '@/components/products-sidebar';
+import Link from 'next/link';
+import { cn } from '@/lib/utils';
+import { buttonVariants } from '@/components/ui/button';
 
 function ProductGrid({ category }: { category?: string }) {
   const filteredProducts = category
@@ -10,7 +12,7 @@ function ProductGrid({ category }: { category?: string }) {
     : products;
 
   return (
-     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+     <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
       {filteredProducts.length > 0 ? (
         filteredProducts.map((product) => (
           <ProductCard key={product.id} product={product} />
@@ -46,14 +48,24 @@ export default function ProductsPage({
         </p>
       </div>
 
-      <div className="flex flex-col md:flex-row gap-12">
-        <ProductsSidebar />
-        <main className="flex-1">
-          <Suspense fallback={<div>Loading...</div>}>
-            <ProductGrid category={category} />
-          </Suspense>
-        </main>
+      <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <Link href="/products" className={cn(buttonVariants({ variant: !category ? 'default' : 'outline' }))}>All</Link>
+        {productCategories.map((c) => (
+          <Link
+            key={c.id}
+            href={`/products?category=${c.id}`}
+            className={cn(buttonVariants({ variant: category === c.id ? 'default' : 'outline' }))}
+          >
+            {c.name}
+          </Link>
+        ))}
       </div>
+
+      <main>
+        <Suspense fallback={<div>Loading...</div>}>
+          <ProductGrid category={category} />
+        </Suspense>
+      </main>
     </div>
   );
 }
