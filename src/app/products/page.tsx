@@ -28,7 +28,7 @@ export default function ProductsPage({
         </TabsList>
         
         <TabsContent value="all">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
             {products.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
@@ -37,7 +37,7 @@ export default function ProductsPage({
 
         {productCategories.map((category) => (
           <TabsContent key={category.id} value={category.id}>
-             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
               {products
                 .filter((product) => product.category === category.id).length > 0 ? (
                   products
