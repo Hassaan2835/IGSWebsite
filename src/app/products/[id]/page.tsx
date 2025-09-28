@@ -7,8 +7,8 @@ import { notFound } from 'next/navigation';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { EnhanceDescriptionTool } from '@/components/enhance-description-tool';
-import { useState, use } from 'react';
-import { Star, StarHalf, Minus, Plus, X } from 'lucide-react';
+import { useState, use, useEffect, useCallback } from 'react';
+import { Star, StarHalf, Minus, Plus, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 
 function QuantityInput() {
@@ -33,20 +33,51 @@ function QuantityInput() {
 export default function ProductDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
   const product = products.find((p) => p.id === id);
-  const [activeImage, setActiveImage] = useState(product?.image);
   const [isImageModalOpen, setIsImageModalOpen] = useState(false);
+  
+  // Create a list of images to be used as thumbnails
+  const imageThumbnails = [
+    product?.image,
+    'https://picsum.photos/seed/p1/500/600',
+    'https://picsum.photos/seed/p2/500/600',
+    'https://picsum.photos/seed/p3/500/600',
+  ].filter(Boolean) as string[];
+  
+  const [activeImage, setActiveImage] = useState(imageThumbnails[0]);
+
+  const activeImageIndex = imageThumbnails.indexOf(activeImage);
+
+  const nextImage = useCallback(() => {
+    setActiveImage(imageThumbnails[(activeImageIndex + 1) % imageThumbnails.length]);
+  }, [activeImageIndex, imageThumbnails]);
+
+  const prevImage = useCallback(() => {
+    setActiveImage(imageThumbnails[(activeImageIndex - 1 + imageThumbnails.length) % imageThumbnails.length]);
+  }, [activeImageIndex, imageThumbnails]);
+  
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (isImageModalOpen) {
+        if (event.key === 'ArrowRight') {
+          nextImage();
+        } else if (event.key === 'ArrowLeft') {
+          prevImage();
+        } else if (event.key === 'Escape') {
+          setIsImageModalOpen(false);
+        }
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isImageModalOpen, nextImage, prevImage]);
+
 
   if (!product) {
     notFound();
   }
-
-  // Create a list of images to be used as thumbnails
-  const imageThumbnails = [
-    product.image,
-    'https://picsum.photos/100/100?random=1',
-    'https://picsum.photos/100/100?random=2',
-    'https://picsum.photos/100/100?random=3',
-  ];
 
   return (
     <div className="container mx-auto px-4 py-12 md:px-6 md:py-16">
@@ -131,23 +162,48 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
 
       {isImageModalOpen && (
         <div 
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90"
           onClick={() => setIsImageModalOpen(false)}
         >
-          <div className="relative max-w-4xl max-h-[90vh] w-full p-4" onClick={e => e.stopPropagation()}>
-            <Image
-              src={activeImage || product.image}
-              alt={product.name}
-              layout="fill"
-              objectFit="contain"
-              className="w-full h-full"
-            />
+          <div className="relative w-full h-full flex items-center justify-center p-4" onClick={e => e.stopPropagation()}>
+            
+            <div className="relative w-full h-full max-w-screen-lg max-h-screen">
+              <Image
+                src={activeImage}
+                alt={product.name}
+                fill
+                className="object-contain"
+              />
+            </div>
+            
             <button 
               onClick={() => setIsImageModalOpen(false)}
-              className="absolute top-4 right-4 text-white bg-black/50 rounded-full p-2 hover:bg-black/80 transition-colors"
+              className="absolute top-4 right-4 text-white bg-black/30 rounded-full p-2 hover:bg-black/60 transition-colors z-10"
+              aria-label="Close image viewer"
             >
-              <X className="w-6 h-6" />
+              <X className="w-8 h-8" />
             </button>
+            
+            <button
+                onClick={prevImage}
+                className="absolute left-4 top-1/2 -translate-y-1/2 text-white bg-black/30 rounded-full p-2 hover:bg-black/60 transition-colors"
+                aria-label="Previous image"
+            >
+                <ChevronLeft className="w-8 h-8" />
+            </button>
+
+            <button
+                onClick={nextImage}
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-white bg-black/30 rounded-full p-2 hover:bg-black/60 transition-colors"
+                aria-label="Next image"
+            >
+                <ChevronRight className="w-8 h-8" />
+            </button>
+            
+            <div className="absolute top-4 left-4 text-white bg-black/30 rounded-md px-3 py-1 text-lg">
+              {activeImageIndex + 1} / {imageThumbnails.length}
+            </div>
+
           </div>
         </div>
       )}
