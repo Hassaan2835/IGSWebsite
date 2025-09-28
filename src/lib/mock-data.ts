@@ -194,7 +194,7 @@ export const products: Product[] = [
     category: 'joint-bone-health',
     image: 'https://uploads.onecompiler.io/43vh7ked9/43y2sk9pz/IMG-20250722-WA0020-removebg-preview.png',
     dataAiHint: 'calcium tablets',
-    shortDescription: 'Calcium tablets for strong bones.',
+    shortDescription: 'Advanced calcium tablets for bone health.',
     originalDescription: 'Ig-cal provides essential calcium and Vitamin D for building and maintaining strong bones and teeth.',
     keyIngredients: 'Calcium, Vitamin D3',
     details: {
@@ -246,16 +246,16 @@ export const products: Product[] = [
   },
   {
     id: 'prod-jbh-005',
-    name: 'Ig-cal Sup',
+    name: 'IG-CAL Syrup',
     category: 'joint-bone-health',
     image: 'https://uploads.onecompiler.io/43vh7ked9/43y2sk9pz/IMG-20250722-WA0021-removebg-preview.png',
-    dataAiHint: 'joint tablets',
-    shortDescription: 'Powerful tablet for complete joint care.',
-    originalDescription: 'Clupik Plus offers a multi-action approach to manage joint pain and support long-term joint health.',
-    keyIngredients: 'Glucosamine, MSM, Diacerein',
+    dataAiHint: 'calcium syrup',
+    shortDescription: 'A powerful calcium syrup for all ages.',
+    originalDescription: 'A powerful calcium syrup to fulfill the daily calcium needs of all age groups, promoting strong bones and overall health.',
+    keyIngredients: 'Calcium, Vitamin D3, Vitamin B12',
     details: {
-      composition: 'A combination tablet for comprehensive joint care.',
-      healthBenefits: 'Reduces pain and inflammation, protects cartilage, and improves joint function.',
+      composition: 'A calcium syrup with Vitamin D3 and B12 for enhanced absorption.',
+      healthBenefits: 'Strengthens bones, supports nerve function, and boosts energy.',
     },
   },
   {
