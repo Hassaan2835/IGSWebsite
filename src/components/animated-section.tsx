@@ -10,21 +10,38 @@ interface AnimatedSectionProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export function AnimatedSection({ children, animation, className, ...props }: AnimatedSectionProps) {
-  const { ref, isVisible } = useScrollAnimation();
+  const { ref, progress } = useScrollAnimation();
 
-  const animationClasses = {
-    slideInFromLeft: 'slide-in-from-left',
-    slideInFromRight: 'slide-in-from-right',
-    fadeIn: 'fade-in',
+  const getStyle = (): React.CSSProperties => {
+    switch (animation) {
+      case 'slideInFromLeft':
+        return {
+          transform: `translateX(${-100 + progress * 100}%)`,
+          opacity: progress,
+          transition: 'transform 0.1s ease-out, opacity 0.1s ease-out'
+        };
+      case 'slideInFromRight':
+        return {
+          transform: `translateX(${100 - progress * 100}%)`,
+          opacity: progress,
+          transition: 'transform 0.1s ease-out, opacity 0.1s ease-out'
+        };
+      case 'fadeIn':
+        return {
+          opacity: progress,
+          transition: 'opacity 0.2s ease-in'
+        };
+      default:
+        return {};
+    }
   };
 
   return (
     <div
       ref={ref}
+      style={getStyle()}
       className={cn(
         'transition-all duration-500 ease-out',
-        animationClasses[animation],
-        { 'visible': isVisible },
         className
       )}
       {...props}
