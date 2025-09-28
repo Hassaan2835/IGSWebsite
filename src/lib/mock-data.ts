@@ -351,7 +351,7 @@ export const products: Product[] = [
   // Immune Booster
   {
     id: 'prod-ib-001',
-    name: 'Justin Syp (120ml)',
+    name: 'JUSTIN Syrup',
     category: 'immune-booster',
     image: 'https://uploads.onecompiler.io/43vh7ked9/43y2sk9pz/IMG-20250722-WA0026-removebg-preview.png',
     dataAiHint: 'immune syrup',
