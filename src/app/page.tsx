@@ -1,4 +1,5 @@
 
+
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
@@ -6,6 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Pill, Shield, Bone, Brain, Droplet, Weight, Baby, HeartPulse } from 'lucide-react';
 import { productCategories } from '@/lib/mock-data';
 import { ReactElement } from 'react';
+import { AnimatedSection } from '@/components/animated-section';
 
 const categoryIcons: { [key: string]: ReactElement } = {
   'vitamins': <Pill className="w-8 h-8" />,
@@ -79,19 +81,21 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-primary/5">
+      <section className="py-16 md:py-24 bg-primary/5 overflow-x-hidden">
         <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center">
-           <div className="relative h-64 md:h-auto order-last md:order-first">
-             <Image
-              src="https://www.guardian.in/cdn/shop/articles/What-Is-The-Impact-of-Multivitamins-On-Your-Body.jpg?v=1713937505&width=1000"
-              alt="A modern research laboratory"
-              width={600}
-              height={450}
-              data-ai-hint="modern laboratory"
-              className="rounded-xl shadow-xl object-cover w-full h-full"
-            />
-          </div>
-          <div className="space-y-6">
+           <AnimatedSection animation="slideInFromLeft" className="order-last md:order-first">
+             <div className="relative h-64 md:h-auto">
+               <Image
+                src="https://www.guardian.in/cdn/shop/articles/What-Is-The-Impact-of-Multivitamins-On-Your-Body.jpg?v=1713937505&width=1000"
+                alt="A modern research laboratory"
+                width={600}
+                height={450}
+                data-ai-hint="modern laboratory"
+                className="rounded-xl shadow-xl object-cover w-full h-full"
+              />
+            </div>
+          </AnimatedSection>
+          <AnimatedSection animation="slideInFromRight" className="space-y-6">
             <h2 className="text-3xl md:text-4xl font-bold">Our Vision &amp; Mission</h2>
             <p className="text-muted-foreground">
               We are dedicated to enhancing community health by providing premium, natural medicines. Our vision is to be a leader in the healthcare industry, recognized for our innovation and unwavering commitment to quality. We adhere strictly to WHO standards for good manufacturing practices, ensuring every product is safe and effective.
@@ -99,7 +103,7 @@ export default function Home() {
             <Button asChild variant="outline">
               <Link href="/about">Learn More</Link>
             </Button>
-          </div>
+          </AnimatedSection>
         </div>
       </section>
 

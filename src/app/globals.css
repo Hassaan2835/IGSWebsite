@@ -94,4 +94,23 @@ body {
   img:hover {
     @apply scale-105;
   }
+
+  .slide-in-from-left {
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+  }
+  .slide-in-from-right {
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+  }
+  .fade-in {
+    opacity: 0;
+    transition: opacity 0.6s ease-in;
+  }
+  .visible {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
