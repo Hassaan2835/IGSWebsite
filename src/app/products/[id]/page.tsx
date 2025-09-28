@@ -1,4 +1,3 @@
-
 'use client';
 
 import Image from 'next/image';
@@ -119,11 +118,6 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
         <div className="space-y-6">
            <div>
             <Badge variant="default" className="text-lg mb-2">{product.name}</Badge>
-            <div className="flex items-center gap-4 mb-4">
-              <a href="#" className="text-sm font-medium text-primary hover:underline">484 reviews</a>
-              <span className="text-sm text-muted-foreground">|</span>
-              <a href="#" className="text-sm font-medium text-primary hover:underline">14 questions</a>
-            </div>
             <p className="text-3xl font-bold mb-4">Rs. 1,150</p>
              <div>
               <h3 className="font-semibold text-lg mb-2">Helps to:</h3>
