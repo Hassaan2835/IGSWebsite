@@ -262,7 +262,7 @@ export const products: Product[] = [
     id: 'prod-jbh-009',
     name: 'CD-3 Tablets',
     category: 'joint-bone-health',
-    image: 'https://picsum.photos/seed/jbh009/400/400',
+    image: 'https://uploads.onecompiler.io/43vh7ked9/43y2sk9pz/IMG-20250722-WA0015-removebg-preview.png',
     dataAiHint: 'joint supplement',
     shortDescription: 'Advanced formula for arthritis and joint pain relief.',
     originalDescription: 'Artho-Ease is designed to provide comprehensive support for joint health, reducing inflammation and improving mobility for those suffering from arthritis.',
