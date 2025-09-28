@@ -144,6 +144,48 @@ export const products: Product[] = [
       healthBenefits: 'Supports cardiovascular health, enhances energy production, and provides antioxidant benefits.',
     },
   },
+  {
+    id: 'prod-jbh-006',
+    name: 'Quick-D Insta Shot (Vanilla Flavour)',
+    category: 'vitamins',
+    image: 'https://uploads.onecompiler.io/43vh7ked9/43y2sk9pz/IMG-20250722-WA0028-removebg-preview.png',
+    dataAiHint: 'instant relief',
+    shortDescription: 'Quick-dissolving sachet for bone and joint health.',
+    originalDescription: 'A convenient and fast-acting formula to support calcium levels and bone strength.',
+    keyIngredients: 'Calcium, Vitamin D3, Vitamin K2-7',
+    details: {
+      composition: 'Instantly dissolving powder for quick absorption.',
+      healthBenefits: 'Provides rapid support for bone health and helps in maintaining calcium balance.',
+    },
+  },
+  {
+    id: 'prod-jbh-007',
+    name: 'Quick-D Insta Shot (Strawberry Flavour)',
+    category: 'vitamins',
+    image: 'https://uploads.onecompiler.io/43vh7ked9/43y2sk9pz/IMG-20250722-WA0033-removebg-preview.png',
+    dataAiHint: 'instant relief',
+    shortDescription: 'Quick-dissolving sachet for bone and joint health.',
+    originalDescription: 'A convenient and fast-acting formula to support calcium levels and bone strength.',
+    keyIngredients: 'Calcium, Vitamin D3, Vitamin K2-7',
+    details: {
+      composition: 'Instantly dissolving powder for quick absorption.',
+      healthBenefits: 'Provides rapid support for bone health and helps in maintaining calcium balance.',
+    },
+  },
+  {
+    id: 'prod-jbh-008',
+    name: 'Quick-D Insta Shot (Mango Flavour)',
+    category: 'vitamins',
+    image: 'https://uploads.onecompiler.io/43vh7ked9/43y2sk9pz/IMG-20250722-WA0029-removebg-preview.png',
+    dataAiHint: 'instant relief',
+    shortDescription: 'Quick-dissolving sachet for bone and joint health.',
+    originalDescription: 'A convenient and fast-acting formula to support calcium levels and bone strength.',
+    keyIngredients: 'Calcium, Vitamin D3, Vitamin K2-7',
+    details: {
+      composition: 'Instantly dissolving powder for quick absorption.',
+      healthBenefits: 'Provides rapid support for bone health and helps in maintaining calcium balance.',
+    },
+  },
 
   // Joint and Bone Health
   {
@@ -214,48 +256,6 @@ export const products: Product[] = [
     details: {
       composition: 'A combination tablet for comprehensive joint care.',
       healthBenefits: 'Reduces pain and inflammation, protects cartilage, and improves joint function.',
-    },
-  },
-  {
-    id: 'prod-jbh-006',
-    name: 'Quick-D Insta Shot (Vanilla Flavour)',
-    category: 'joint-bone-health',
-    image: 'https://uploads.onecompiler.io/43vh7ked9/43y2sk9pz/IMG-20250722-WA0028-removebg-preview.png',
-    dataAiHint: 'instant relief',
-    shortDescription: 'Quick-dissolving sachet for bone and joint health.',
-    originalDescription: 'A convenient and fast-acting formula to support calcium levels and bone strength.',
-    keyIngredients: 'Calcium, Vitamin D3, Vitamin K2-7',
-    details: {
-      composition: 'Instantly dissolving powder for quick absorption.',
-      healthBenefits: 'Provides rapid support for bone health and helps in maintaining calcium balance.',
-    },
-  },
-  {
-    id: 'prod-jbh-007',
-    name: 'Quick-D Insta Shot (Strawberry Flavour)',
-    category: 'joint-bone-health',
-    image: 'https://uploads.onecompiler.io/43vh7ked9/43y2sk9pz/IMG-20250722-WA0033-removebg-preview.png',
-    dataAiHint: 'instant relief',
-    shortDescription: 'Quick-dissolving sachet for bone and joint health.',
-    originalDescription: 'A convenient and fast-acting formula to support calcium levels and bone strength.',
-    keyIngredients: 'Calcium, Vitamin D3, Vitamin K2-7',
-    details: {
-      composition: 'Instantly dissolving powder for quick absorption.',
-      healthBenefits: 'Provides rapid support for bone health and helps in maintaining calcium balance.',
-    },
-  },
-  {
-    id: 'prod-jbh-008',
-    name: 'Quick-D Insta Shot (Mango Flavour)',
-    category: 'joint-bone-health',
-    image: 'https://uploads.onecompiler.io/43vh7ked9/43y2sk9pz/IMG-20250722-WA0029-removebg-preview.png',
-    dataAiHint: 'instant relief',
-    shortDescription: 'Quick-dissolving sachet for bone and joint health.',
-    originalDescription: 'A convenient and fast-acting formula to support calcium levels and bone strength.',
-    keyIngredients: 'Calcium, Vitamin D3, Vitamin K2-7',
-    details: {
-      composition: 'Instantly dissolving powder for quick absorption.',
-      healthBenefits: 'Provides rapid support for bone health and helps in maintaining calcium balance.',
     },
   },
 
