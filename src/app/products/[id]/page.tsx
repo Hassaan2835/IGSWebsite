@@ -29,10 +29,10 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
   const [activeImage, setActiveImage] = useState<string | null>(null);
 
   useEffect(() => {
-    if (imageThumbnails.length > 0) {
+    if (imageThumbnails.length > 0 && !activeImage) {
       setActiveImage(imageThumbnails[0]);
     }
-  }, []);
+  }, [imageThumbnails, activeImage]);
 
 
   const activeImageIndex = activeImage ? imageThumbnails.indexOf(activeImage) : -1;
@@ -98,7 +98,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
             onClick={() => setIsImageModalOpen(true)}
           >
             {activeImage && <Image
-              src={activeImage || product.image}
+              src={activeImage}
               alt={product.name}
               fill
               data-ai-hint={product.dataAiHint}
@@ -289,3 +289,5 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
     </div>
   );
 }
+
+    
