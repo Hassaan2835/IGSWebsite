@@ -290,7 +290,7 @@ export const products: Product[] = [
   },
   {
     id: 'prod-id-002',
-    name: 'Optifer Syp',
+    name: 'OPTIFER Syrup',
     category: 'iron-deficiency',
     image: 'https://uploads.onecompiler.io/43vh7ked9/43y2sk9pz/IMG-20250722-WA0027-removebg-preview.png',
     dataAiHint: 'optimal iron',
