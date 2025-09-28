@@ -278,7 +278,7 @@ export const products: Product[] = [
     id: 'prod-id-002',
     name: 'Optifer Syp',
     category: 'iron-deficiency',
-    image: 'https://uploads.onecompiler.io/43vh7ked9/43vjbf8wf/IMG-20250722-WA0027.png',
+    image: 'https://uploads.onecompiler.io/43vh7ked9/43y2sk9pz/IMG-20250722-WA0027-removebg-preview.png',
     dataAiHint: 'optimal iron',
     shortDescription: 'An optimal iron therapy syrup.',
     originalDescription: 'Optifer provides a bioavailable form of iron that is well-tolerated and effective in raising hemoglobin levels.',
