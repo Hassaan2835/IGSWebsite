@@ -193,8 +193,8 @@ export const products: Product[] = [
     name: 'IG-CAL Plus + Tablets',
     category: 'joint-bone-health',
     image: 'https://uploads.onecompiler.io/43vh7ked9/43y2sk9pz/IMG-20250722-WA0020-removebg-preview.png',
-    dataAiHint: 'calcium drops',
-    shortDescription: 'Calcium and Vitamin D drops for all ages.',
+    dataAiHint: 'calcium tablets',
+    shortDescription: 'Advanced calcium and Vitamin D tablets for bone health.',
     originalDescription: 'Ig-cal provides essential calcium and Vitamin D for building and maintaining strong bones and teeth.',
     keyIngredients: 'Calcium, Vitamin D3',
     details: {
