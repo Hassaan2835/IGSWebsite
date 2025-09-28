@@ -30,6 +30,7 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
     if (imageThumbnails.length > 0) {
       setActiveImage(imageThumbnails[0]);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [product?.id]);
 
   const activeImageIndex = activeImage ? imageThumbnails.indexOf(activeImage) : -1;
@@ -120,13 +121,6 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
            <div>
             <Badge variant="default" className="text-lg mb-2">{product.name}</Badge>
             <div className="flex items-center gap-4 mb-4">
-              <div className="flex items-center gap-1 text-yellow-500">
-                <Star className="w-5 h-5" />
-                <Star className="w-5 h-5" />
-                <Star className="w-5 h-5" />
-                <Star className="w-5 h-5" />
-                <StarHalf className="w-5 h-5" />
-              </div>
               <a href="#" className="text-sm font-medium text-primary hover:underline">484 reviews</a>
               <span className="text-sm text-muted-foreground">|</span>
               <a href="#" className="text-sm font-medium text-primary hover:underline">14 questions</a>
