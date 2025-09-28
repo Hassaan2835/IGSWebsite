@@ -204,7 +204,7 @@ export const products: Product[] = [
   },
   {
     id: 'prod-jbh-002',
-    name: 'Nutracal',
+    name: 'Nutracal Sachet',
     category: 'joint-bone-health',
     image: 'https://uploads.onecompiler.io/43vh7ked9/43y2sk9pz/IMG-20250722-WA0030-removebg-preview%20(1).png',
     dataAiHint: 'health sachet',
