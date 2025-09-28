@@ -324,7 +324,7 @@ export const products: Product[] = [
     category: 'colic-pain',
     image: 'https://uploads.onecompiler.io/43vh7ked9/43y2sk9pz/IMG-20250722-WA0017-removebg-preview.png',
     dataAiHint: 'infant relief',
-    shortDescription: 'Provides relief from colic, gas, and stomach discomfort in infants.',
+    shortDescription: 'Fast relief for infant colic, gas, and stomach pain.',
     originalDescription: 'Dontiv 5 provides safe and effective relief from colic pain, gas, and stomach discomfort in infants and children.',
     keyIngredients: 'Simethicone, Dill Oil, Fennel Oil',
     details: {
