@@ -8,28 +8,10 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { EnhanceDescriptionTool } from '@/components/enhance-description-tool';
 import { useState, use, useEffect, useCallback } from 'react';
-import { Star, StarHalf, Minus, Plus, X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Star, StarHalf, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
-function QuantityInput() {
-  const [quantity, setQuantity] = useState(1);
-
-  const increment = () => setQuantity(prev => prev + 1);
-  const decrement = () => setQuantity(prev => (prev > 1 ? prev - 1 : 1));
-
-  return (
-    <div className="flex items-center gap-2">
-      <Button variant="outline" size="icon" onClick={decrement} className="h-8 w-8">
-        <Minus className="h-4 w-4" />
-      </Button>
-      <span className="text-lg font-semibold w-10 text-center">{quantity}</span>
-      <Button variant="outline" size="icon" onClick={increment} className="h-8 w-8">
-        <Plus className="h-4 w-4" />
-      </Button>
-    </div>
-  );
-}
 
 export default function ProductDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
@@ -146,11 +128,6 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
                   <Button variant="default">30 Tablets</Button>
                   <Button variant="outline">60 Tablets</Button>
               </div>
-          </div>
-
-          <div>
-            <h3 className="text-md font-medium mb-2">Quantity</h3>
-            <QuantityInput/>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4">
