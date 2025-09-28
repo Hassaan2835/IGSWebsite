@@ -260,7 +260,7 @@ export const products: Product[] = [
   },
   {
     id: 'prod-jbh-009',
-    name: 'Artho-Ease',
+    name: 'CD-3 Tablets',
     category: 'joint-bone-health',
     image: 'https://picsum.photos/seed/jbh009/400/400',
     dataAiHint: 'joint supplement',
