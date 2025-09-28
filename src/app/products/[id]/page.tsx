@@ -122,10 +122,6 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
             </ul>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" variant="outline" className="flex-1">Buy It Now</Button>
-          </div>
-
         </div>
       </div>
 
