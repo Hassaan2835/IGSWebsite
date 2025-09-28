@@ -192,7 +192,7 @@ export const products: Product[] = [
     id: 'prod-jbh-004',
     name: 'Glupik Plus',
     category: 'joint-bone-health',
-    image: 'https://picsum.photos/409/409',
+    image: 'https://uploads.onecompiler.io/43vh7ked9/43y2sk9pz/IMG-20250722-WA0032-removebg-preview.png',
     dataAiHint: 'health syrup',
     shortDescription: 'A syrup for comprehensive cell and joint support.',
     originalDescription: 'C-Cell syrup is formulated to support cartilage health and joint flexibility.',
