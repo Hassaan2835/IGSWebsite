@@ -164,7 +164,7 @@ export const products: Product[] = [
     id: 'prod-jbh-002',
     name: 'Naturacal Sachet',
     category: 'joint-bone-health',
-    image: 'https://picsum.photos/407/407',
+    image: 'https://uploads.onecompiler.io/43vh7ked9/43y2sk9pz/IMG-20250722-WA0030-removebg-preview%20(1).png',
     dataAiHint: 'health sachet',
     shortDescription: 'Advanced calcium formula in a convenient sachet.',
     originalDescription: 'An enhanced calcium supplement with cofactors for maximum absorption and bone support.',
