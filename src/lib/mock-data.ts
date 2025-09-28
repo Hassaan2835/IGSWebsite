@@ -206,7 +206,7 @@ export const products: Product[] = [
     id: 'prod-jbh-005',
     name: 'Ig-cal Sup',
     category: 'joint-bone-health',
-    image: 'https://uploads.onecompiler.io/43vh7ked9/43y2sk9pz/IMG-20250722-WA0014-removebg-preview.png',
+    image: 'https://uploads.onecompiler.io/43vh7ked9/43y2sk9pz/IMG-20250722-WA0021-removebg-preview.png',
     dataAiHint: 'joint tablets',
     shortDescription: 'Powerful tablet for complete joint care.',
     originalDescription: 'Clupik Plus offers a multi-action approach to manage joint pain and support long-term joint health.',
