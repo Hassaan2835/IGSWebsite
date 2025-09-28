@@ -220,7 +220,7 @@ export const products: Product[] = [
     id: 'prod-jbh-006',
     name: 'Quick-D Insta Shot (Vanilla Flavour)',
     category: 'joint-bone-health',
-    image: 'https://uploads.onecompiler.io/43vh7ked9/43y2sk9pz/IMG-20250722-WA0033-removebg-preview.png',
+    image: 'https://uploads.onecompiler.io/43vh7ked9/43y2sk9pz/IMG-20250722-WA0028-removebg-preview.png',
     dataAiHint: 'instant relief',
     shortDescription: 'Quick-dissolving sachet for bone and joint health.',
     originalDescription: 'A convenient and fast-acting formula to support calcium levels and bone strength.',
