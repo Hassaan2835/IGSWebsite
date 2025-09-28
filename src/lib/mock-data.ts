@@ -324,7 +324,7 @@ export const products: Product[] = [
     id: 'prod-wll-001',
     name: 'UltraCare Plus',
     category: 'weight-loss-liver',
-    image: 'https://uploads.onecompiler.io/43vh7ked9/43vjbf8wf/IMG-20250722-WA0035.png',
+    image: 'https://uploads.onecompiler.io/43vh7ked9/43y2sk9pz/IMG-20250722-WA0035-removebg-preview.png',
     dataAiHint: 'liver support',
     shortDescription: 'Comprehensive support for liver health and metabolism.',
     originalDescription: 'Ultra Care Plus is a blend of herbs and nutrients that support liver detoxification and promote a healthy metabolism, aiding in weight management.',
