@@ -114,42 +114,6 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
         <div className="space-y-6">
           <h1 className="text-3xl md:text-4xl font-bold">{product.name}</h1>
           
-          {/* Offers & Discount Section */}
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle className="text-lg font-semibold">Offers & Discount</CardTitle>
-              <Link href="#" className="text-sm text-primary hover:underline">View All</Link>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="flex items-center justify-between p-3 bg-primary/5 rounded-lg">
-                <div className="flex items-center gap-4">
-                  <Image src="https://picsum.photos/seed/offer1/64/64" alt="Offer" width={64} height={64} className="rounded-md" />
-                  <div>
-                    <p className="font-semibold">2 Biotin + Free Bonex-D Offer</p>
-                    <Badge variant="secondary">For online customers only</Badge>
-                  </div>
-                </div>
-                <div className="text-right">
-                  <p className="text-sm text-muted-foreground line-through">Rs.4,850.</p>
-                  <p className="text-lg font-bold text-primary">Rs.2,300</p>
-                </div>
-              </div>
-               <div className="flex items-center justify-between p-3 bg-primary/5 rounded-lg">
-                <div className="flex items-center gap-4">
-                  <Image src="https://picsum.photos/seed/offer2/64/64" alt="Offer" width={64} height={64} className="rounded-md" />
-                  <div>
-                    <p className="font-semibold">Daily Skincare Bundle</p>
-                    <Badge variant="secondary">For online customers only</Badge>
-                  </div>
-                </div>
-                <div className="text-right">
-                  <p className="text-sm text-muted-foreground line-through">Rs.6,630.</p>
-                  <p className="text-lg font-bold text-primary">Rs.4,780</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-          
           {/* Certifications Section */}
           <div className="flex flex-wrap items-center justify-center gap-4 py-4">
             {certifications.map(cert => (
