@@ -26,15 +26,24 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
     'https://picsum.photos/seed/p3/500/600',
   ].filter(Boolean) as string[];
   
-  const [activeImage, setActiveImage] = useState(imageThumbnails[0]);
+  const [activeImage, setActiveImage] = useState<string | null>(null);
 
-  const activeImageIndex = imageThumbnails.indexOf(activeImage);
+  useEffect(() => {
+    if (imageThumbnails.length > 0) {
+      setActiveImage(imageThumbnails[0]);
+    }
+  }, []);
+
+
+  const activeImageIndex = activeImage ? imageThumbnails.indexOf(activeImage) : -1;
 
   const nextImage = useCallback(() => {
+    if (activeImageIndex === -1) return;
     setActiveImage(imageThumbnails[(activeImageIndex + 1) % imageThumbnails.length]);
   }, [activeImageIndex, imageThumbnails]);
 
   const prevImage = useCallback(() => {
+    if (activeImageIndex === -1) return;
     setActiveImage(imageThumbnails[(activeImageIndex - 1 + imageThumbnails.length) % imageThumbnails.length]);
   }, [activeImageIndex, imageThumbnails]);
   
@@ -88,13 +97,13 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
             className="relative aspect-[4/5] w-full max-w-md rounded-lg overflow-hidden shadow-lg border cursor-pointer"
             onClick={() => setIsImageModalOpen(true)}
           >
-            <Image
+            {activeImage && <Image
               src={activeImage || product.image}
               alt={product.name}
               fill
               data-ai-hint={product.dataAiHint}
               className="object-contain p-4"
-            />
+            />}
           </div>
           <div className="flex gap-2">
             {imageThumbnails.map((img, index) => (
@@ -222,7 +231,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
         </div>
       </div>
 
-      {isImageModalOpen && (
+      {isImageModalOpen && activeImage && (
         <div 
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/90"
           onClick={() => setIsImageModalOpen(false)}
@@ -262,9 +271,9 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
                 <ChevronRight className="w-8 h-8" />
             </button>
             
-            <div className="absolute top-4 left-4 text-white bg-black/30 rounded-md px-3 py-1 text-lg">
+            {activeImageIndex !== -1 && <div className="absolute top-4 left-4 text-white bg-black/30 rounded-md px-3 py-1 text-lg">
               {activeImageIndex + 1} / {imageThumbnails.length}
-            </div>
+            </div>}
 
           </div>
         </div>
@@ -280,4 +289,3 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
     </div>
   );
 }
-
