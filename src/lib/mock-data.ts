@@ -194,7 +194,7 @@ export const products: Product[] = [
     category: 'joint-bone-health',
     image: 'https://uploads.onecompiler.io/43vh7ked9/43y2sk9pz/IMG-20250722-WA0020-removebg-preview.png',
     dataAiHint: 'calcium tablets',
-    shortDescription: 'Advanced calcium tablets for bone health.',
+    shortDescription: 'Advanced calcium tablets for strong bones.',
     originalDescription: 'Ig-cal provides essential calcium and Vitamin D for building and maintaining strong bones and teeth.',
     keyIngredients: 'Calcium, Vitamin D3',
     details: {
@@ -308,7 +308,7 @@ export const products: Product[] = [
     category: 'iron-deficiency',
     image: 'https://uploads.onecompiler.io/43vh7ked9/43y2sk9pz/IMG-20250722-WA0016-removebg-preview.png',
     dataAiHint: 'iron drops',
-    shortDescription: 'Iron and vitamin drops for infants.',
+    shortDescription: 'Pediatric drops with Iron, Folic Acid, and Vitamin A.',
     originalDescription: 'Cifor-A drops are designed to meet the iron and vitamin A needs of growing infants, preventing deficiencies.',
     keyIngredients: 'Iron, Vitamin A, Folic Acid',
     details: {
