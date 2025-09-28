@@ -264,7 +264,7 @@ export const products: Product[] = [
     id: 'prod-id-001',
     name: 'Ig-Ferr Syp',
     category: 'iron-deficiency',
-    image: 'https://uploads.onecompiler.io/43vh7ked9/43vjbf8wf/IMG-20250722-WA0023.png',
+    image: 'https://uploads.onecompiler.io/43vh7ked9/43y2sk9pz/IMG-20250722-WA0027-removebg-preview.png',
     dataAiHint: 'iron syrup',
     shortDescription: 'A palatable iron syrup for treating anemia.',
     originalDescription: 'Ig-Ferr Syrup is a gentle iron supplement that helps combat iron deficiency without causing stomach upset.',
