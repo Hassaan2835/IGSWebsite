@@ -122,16 +122,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
             </ul>
           </div>
 
-          <div>
-              <h3 className="text-md font-medium">Pack Size: <span className="text-muted-foreground">30 Tablets</span></h3>
-              <div className="flex gap-2 mt-2">
-                  <Button variant="default">30 Tablets</Button>
-                  <Button variant="outline">60 Tablets</Button>
-              </div>
-          </div>
-
           <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="flex-1">Add to Cart</Button>
               <Button size="lg" variant="outline" className="flex-1">Buy It Now</Button>
           </div>
 
