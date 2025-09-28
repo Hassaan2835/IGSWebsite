@@ -178,7 +178,7 @@ export const products: Product[] = [
     id: 'prod-jbh-003',
     name: 'C-GEL',
     category: 'joint-bone-health',
-    image: 'https://uploads.onecompiler.io/43vh7ked9/43y2sk9pz/IMG-20250722-WA0030-removebg-preview%20(1).png',
+    image: 'https://uploads.onecompiler.io/43vh7ked9/43y2sk9pz/IMG-20250722-WA0014-removebg-preview.png',
     dataAiHint: 'natural supplement',
     shortDescription: 'A natural approach to joint and muscle comfort.',
     originalDescription: 'Naturalaf contains a blend of natural extracts known for their anti-inflammatory and analgesic properties.',
