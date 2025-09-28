@@ -76,7 +76,7 @@ export const products: Product[] = [
   },
   {
     id: 'prod-vit-002',
-    name: 'MY VITA Tablets (30 Tablets)',
+    name: 'MY VITA Tablets',
     category: 'vitamins',
     image: 'https://uploads.onecompiler.io/43vh7ked9/43y2sk9pz/IMG-20250722-WA0013-removebg-preview.png',
     dataAiHint: 'vitamin supplement',
