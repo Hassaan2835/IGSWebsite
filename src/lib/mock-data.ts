@@ -304,7 +304,7 @@ export const products: Product[] = [
   },
   {
     id: 'prod-id-003',
-    name: 'Cilof - A Drops',
+    name: 'CILOF-A Drops',
     category: 'iron-deficiency',
     image: 'https://uploads.onecompiler.io/43vh7ked9/43y2sk9pz/IMG-20250722-WA0016-removebg-preview.png',
     dataAiHint: 'iron drops',
