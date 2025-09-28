@@ -190,7 +190,7 @@ export const products: Product[] = [
   // Joint and Bone Health
   {
     id: 'prod-jbh-001',
-    name: 'Ig-cal Plus',
+    name: 'IG-CAL Plus + Tablets',
     category: 'joint-bone-health',
     image: 'https://uploads.onecompiler.io/43vh7ked9/43y2sk9pz/IMG-20250722-WA0020-removebg-preview.png',
     dataAiHint: 'calcium drops',
