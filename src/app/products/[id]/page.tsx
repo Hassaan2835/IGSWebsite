@@ -18,6 +18,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
   const { id } = use(params);
   const product = products.find((p) => p.id === id);
   const [isImageModalOpen, setIsImageModalOpen] = useState(false);
+  const [selectedPackSize, setSelectedPackSize] = useState('30 Tablets');
   
   // Create a list of images to be used as thumbnails
   const imageThumbnails = [
@@ -112,7 +113,45 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
 
         {/* Right Column: Product Details */}
         <div className="space-y-6">
-          <h1 className="text-3xl md:text-4xl font-bold">{product.name}</h1>
+           <div>
+            <Badge variant="default" className="text-lg mb-2">{product.name}</Badge>
+            <div className="flex items-center gap-4 mb-4">
+              <div className="flex items-center gap-1 text-yellow-500">
+                <Star className="w-5 h-5" />
+                <Star className="w-5 h-5" />
+                <Star className="w-5 h-5" />
+                <Star className="w-5 h-5" />
+                <StarHalf className="w-5 h-5" />
+              </div>
+              <a href="#" className="text-sm font-medium text-primary hover:underline">484 reviews</a>
+              <span className="text-sm text-muted-foreground">|</span>
+              <a href="#" className="text-sm font-medium text-primary hover:underline">14 questions</a>
+            </div>
+            <p className="text-3xl font-bold mb-4">Rs. 1,150</p>
+             <div>
+              <h3 className="font-semibold text-lg mb-2">Helps to:</h3>
+              <ul className="list-disc list-inside text-muted-foreground space-y-1">
+                <li>Control <span className="font-semibold text-foreground">hair fall</span> by strengthening hair follicles.</li>
+                <li>Boost <span className="font-semibold text-foreground">keratin production</span> for thicker and fuller hair.</li>
+                <li>Support <span className="font-semibold text-foreground">strong nails</span> and glowing skin.</li>
+              </ul>
+            </div>
+          </div>
+
+           <div>
+              <p className="text-sm font-medium mb-2">Pack Size: <span className="font-semibold">{selectedPackSize}</span></p>
+              <div className="flex gap-2">
+                  {['30 Tablets', '60 Tablets', '120 Tablets'].map(size => (
+                      <Button 
+                          key={size}
+                          variant={selectedPackSize === size ? 'default' : 'outline'}
+                          onClick={() => setSelectedPackSize(size)}
+                      >
+                          {size}
+                      </Button>
+                  ))}
+              </div>
+          </div>
           
           {/* Certifications Section */}
           <div className="flex flex-wrap items-center justify-center gap-4 py-4">
@@ -243,5 +282,3 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
     </div>
   );
 }
-
-    
