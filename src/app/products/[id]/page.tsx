@@ -10,6 +10,7 @@ import { EnhanceDescriptionTool } from '@/components/enhance-description-tool';
 import { useState, use, useEffect, useCallback } from 'react';
 import { Star, StarHalf, Minus, Plus, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 function QuantityInput() {
   const [quantity, setQuantity] = useState(1);
@@ -207,6 +208,48 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
           </div>
         </div>
       )}
+
+      <div className="mt-16">
+        <Accordion type="single" collapsible defaultValue="item-1" className="w-full">
+          <AccordionItem value="item-1">
+            <AccordionTrigger className="text-lg font-semibold">Product Details</AccordionTrigger>
+            <AccordionContent className="text-base text-muted-foreground p-4 space-y-4">
+              <div>
+                <h4 className="font-semibold text-foreground">Composition</h4>
+                <p>{product.details.composition}</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-foreground">Health Benefits</h4>
+                <p>{product.details.healthBenefits}</p>
+              </div>
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-2">
+            <AccordionTrigger className="text-lg font-semibold">Ingredients</AccordionTrigger>
+            <AccordionContent className="text-base text-muted-foreground p-4">
+              <p>Key Ingredients: {product.keyIngredients}</p>
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-3">
+            <AccordionTrigger className="text-lg font-semibold">FAQs</AccordionTrigger>
+            <AccordionContent className="text-base text-muted-foreground p-4">
+              <p>Common questions about this product will be listed here.</p>
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-4">
+            <AccordionTrigger className="text-lg font-semibold">Customer Reviews</AccordionTrigger>
+            <AccordionContent className="text-base text-muted-foreground p-4">
+              <p>Customer reviews will be displayed in this section.</p>
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-5">
+            <AccordionTrigger className="text-lg font-semibold">Our Quality Promise</AccordionTrigger>
+            <AccordionContent className="text-base text-muted-foreground p-4">
+              <p>We are committed to providing the highest quality natural medicines. Our products are manufactured under strict WHO-GMP guidelines to ensure safety and efficacy.</p>
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+      </div>
 
       <div className="mt-16">
         <EnhanceDescriptionTool
