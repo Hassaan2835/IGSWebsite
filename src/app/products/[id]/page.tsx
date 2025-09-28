@@ -7,7 +7,7 @@ import { notFound } from 'next/navigation';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { EnhanceDescriptionTool } from '@/components/enhance-description-tool';
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, use } from 'react';
 import { Star, StarHalf, X, ChevronLeft, ChevronRight, Award, ShieldCheck, Leaf, Sprout, CheckCircle2 } from 'lucide-react';
 import Link from 'next/link';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -30,8 +30,7 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
     if (product) {
       setActiveImage(product.image);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [product?.id, product?.image]);
+  }, [product]);
 
   const activeImageIndex = activeImage ? imageThumbnails.indexOf(activeImage) : -1;
 
