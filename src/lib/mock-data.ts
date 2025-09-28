@@ -258,6 +258,20 @@ export const products: Product[] = [
       healthBenefits: 'Reduces pain and inflammation, protects cartilage, and improves joint function.',
     },
   },
+  {
+    id: 'prod-jbh-009',
+    name: 'Artho-Ease',
+    category: 'joint-bone-health',
+    image: 'https://picsum.photos/seed/jbh009/400/400',
+    dataAiHint: 'joint supplement',
+    shortDescription: 'Advanced formula for arthritis and joint pain relief.',
+    originalDescription: 'Artho-Ease is designed to provide comprehensive support for joint health, reducing inflammation and improving mobility for those suffering from arthritis.',
+    keyIngredients: 'Glucosamine, Chondroitin, Turmeric',
+    details: {
+      composition: 'Each tablet contains Glucosamine Sulfate, Chondroitin Sulfate, and Turmeric extract.',
+      healthBenefits: 'Supports cartilage health, reduces joint pain and stiffness, and has anti-inflammatory properties.',
+    },
+  },
 
   // Iron Deficiency
   {
