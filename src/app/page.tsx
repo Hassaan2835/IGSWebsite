@@ -111,12 +111,7 @@ export default function Home() {
               From concept to consumer, our process is defined by excellence.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="flex flex-col items-center text-center p-6 space-y-3">
-              <Pill className="w-12 h-12 text-accent" />
-              <h3 className="text-xl font-semibold">Research &amp; Development</h3>
-              <p className="text-muted-foreground">Our R&amp;D team continuously explores new natural compounds and formulations to create innovative health solutions.</p>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
              <div className="flex flex-col items-center text-center p-6 space-y-3">
               <Shield className="w-12 h-12 text-accent" />
               <h3 className="text-xl font-semibold">Marketing and Sales</h3>
