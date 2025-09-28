@@ -194,7 +194,7 @@ export const products: Product[] = [
     category: 'joint-bone-health',
     image: 'https://uploads.onecompiler.io/43vh7ked9/43y2sk9pz/IMG-20250722-WA0020-removebg-preview.png',
     dataAiHint: 'calcium tablets',
-    shortDescription: 'Advanced calcium and Vitamin D tablets for bone health.',
+    shortDescription: 'Calcium tablets for strong bones.',
     originalDescription: 'Ig-cal provides essential calcium and Vitamin D for building and maintaining strong bones and teeth.',
     keyIngredients: 'Calcium, Vitamin D3',
     details: {
