@@ -176,7 +176,7 @@ export const products: Product[] = [
   },
   {
     id: 'prod-jbh-003',
-    name: 'C-Cell',
+    name: 'C-GEL',
     category: 'joint-bone-health',
     image: 'https://uploads.onecompiler.io/43vh7ked9/43y2sk9pz/IMG-20250722-WA0030-removebg-preview%20(1).png',
     dataAiHint: 'natural supplement',
