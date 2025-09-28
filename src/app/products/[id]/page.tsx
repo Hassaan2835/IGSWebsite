@@ -17,8 +17,8 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
   const product = products.find((p) => p.id === id);
   const [isImageModalOpen, setIsImageModalOpen] = useState(false);
   const [selectedPackSize, setSelectedPackSize] = useState('30 Tablets');
+  const [activeImage, setActiveImage] = useState<string | null>(null);
   
-  // Create a list of images to be used as thumbnails
   const imageThumbnails = [
     product?.image,
     'https://picsum.photos/seed/p1/500/600',
@@ -26,9 +26,13 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
     'https://picsum.photos/seed/p3/500/600',
   ].filter(Boolean) as string[];
   
-  const [activeImage, setActiveImage] = useState<string>(imageThumbnails[0]);
+  useEffect(() => {
+    if (imageThumbnails.length > 0) {
+      setActiveImage(imageThumbnails[0]);
+    }
+  }, [product?.id]);
 
-  const activeImageIndex = imageThumbnails.indexOf(activeImage);
+  const activeImageIndex = activeImage ? imageThumbnails.indexOf(activeImage) : -1;
 
   const nextImage = useCallback(() => {
     if (activeImageIndex === -1) return;
@@ -85,7 +89,7 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
       </div>
       <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
         {/* Left Column: Image Gallery */}
-        <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-col items-center gap-4 md:sticky top-20 self-start">
           <div 
             className="relative aspect-[4/5] w-full max-w-md rounded-lg overflow-hidden shadow-lg border cursor-pointer"
             onClick={() => setIsImageModalOpen(true)}
