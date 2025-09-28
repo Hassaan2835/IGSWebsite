@@ -12,7 +12,7 @@ import { Star, StarHalf, X, ChevronLeft, ChevronRight, Award, ShieldCheck, Leaf,
 import Link from 'next/link';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
-export default function ProductDetailPage({ params }: { params: Promise<{ id: string }> }) {
+export default function ProductDetailPage({ params }: { params: { id: string } }) {
   const { id } = use(params);
   const product = products.find((p) => p.id === id);
   const [isImageModalOpen, setIsImageModalOpen] = useState(false);
@@ -26,16 +26,9 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
     'https://picsum.photos/seed/p3/500/600',
   ].filter(Boolean) as string[];
   
-  const [activeImage, setActiveImage] = useState<string | null>(null);
+  const [activeImage, setActiveImage] = useState<string>(imageThumbnails[0]);
 
-  useEffect(() => {
-    if (imageThumbnails.length > 0 && !activeImage) {
-      setActiveImage(imageThumbnails[0]);
-    }
-  }, [imageThumbnails, activeImage]);
-
-
-  const activeImageIndex = activeImage ? imageThumbnails.indexOf(activeImage) : -1;
+  const activeImageIndex = imageThumbnails.indexOf(activeImage);
 
   const nextImage = useCallback(() => {
     if (activeImageIndex === -1) return;
