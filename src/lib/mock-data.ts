@@ -336,7 +336,7 @@ export const products: Product[] = [
   // Weight Loss-Liver
   {
     id: 'prod-wll-001',
-    name: 'UltraCare Plus',
+    name: 'ULTRACARE PLUS',
     category: 'weight-loss-liver',
     image: 'https://uploads.onecompiler.io/43vh7ked9/43y2sk9pz/IMG-20250722-WA0035-removebg-preview.png',
     dataAiHint: 'liver support',
