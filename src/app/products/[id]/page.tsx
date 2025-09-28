@@ -7,15 +7,13 @@ import { notFound } from 'next/navigation';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { EnhanceDescriptionTool } from '@/components/enhance-description-tool';
-import { useState, use, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Star, StarHalf, X, ChevronLeft, ChevronRight, Award, ShieldCheck, Leaf, Sprout, CheckCircle2 } from 'lucide-react';
 import Link from 'next/link';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
-
-export default function ProductDetailPage({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = use(params);
+export default function ProductDetailPage({ params }: { params: { id: string } }) {
+  const { id } = params;
   const product = products.find((p) => p.id === id);
   const [isImageModalOpen, setIsImageModalOpen] = useState(false);
   const [selectedPackSize, setSelectedPackSize] = useState('30 Tablets');
