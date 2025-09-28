@@ -308,7 +308,7 @@ export const products: Product[] = [
     category: 'iron-deficiency',
     image: 'https://uploads.onecompiler.io/43vh7ked9/43y2sk9pz/IMG-20250722-WA0016-removebg-preview.png',
     dataAiHint: 'iron drops',
-    shortDescription: 'Pediatric drops with Iron, Folic Acid, and Vitamin A.',
+    shortDescription: 'Pediatric drops to prevent iron & vitamin deficiency.',
     originalDescription: 'Cifor-A drops are designed to meet the iron and vitamin A needs of growing infants, preventing deficiencies.',
     keyIngredients: 'Iron, Vitamin A, Folic Acid',
     details: {
@@ -320,12 +320,12 @@ export const products: Product[] = [
   // Colic Pain
   {
     id: 'prod-cp-001',
-    name: 'Dontive-5',
+    name: 'Dontiv 5',
     category: 'colic-pain',
     image: 'https://uploads.onecompiler.io/43vh7ked9/43y2sk9pz/IMG-20250722-WA0017-removebg-preview.png',
     dataAiHint: 'infant relief',
     shortDescription: 'Gentle drops for infant colic and griping pain.',
-    originalDescription: 'Dontive-5 provides safe and effective relief from colic pain, gas, and stomach discomfort in infants and children.',
+    originalDescription: 'Dontiv 5 provides safe and effective relief from colic pain, gas, and stomach discomfort in infants and children.',
     keyIngredients: 'Simethicone, Dill Oil, Fennel Oil',
     details: {
       composition: 'Available in 12ml and 30ml bottles.',
