@@ -276,7 +276,7 @@ export const products: Product[] = [
   // Iron Deficiency
   {
     id: 'prod-id-001',
-    name: 'Ig-Ferr Syp',
+    name: 'IG-Ferr Srup',
     category: 'iron-deficiency',
     image: 'https://uploads.onecompiler.io/43vh7ked9/43y2sk9pz/IMG-20250722-WA0024-removebg-preview.png',
     dataAiHint: 'iron syrup',
