@@ -138,9 +138,9 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
             <Image
               src={activeImage || product.image}
               alt={product.name}
-              width={800}
-              height={1000}
-              className="object-contain w-full h-full"
+              layout="fill"
+              objectFit="contain"
+              className="w-full h-full"
             />
             <button 
               onClick={() => setIsImageModalOpen(false)}
