@@ -308,7 +308,7 @@ export const products: Product[] = [
     id: 'prod-cp-001',
     name: 'Dontive-5',
     category: 'colic-pain',
-    image: 'https://uploads.onecompiler.io/43vh7ked9/43vjbbt7a/IMG-20250722-WA0017.png',
+    image: 'https://uploads.onecompiler.io/43vh7ked9/43y2sk9pz/IMG-20250722-WA0017-removebg-preview.png',
     dataAiHint: 'infant relief',
     shortDescription: 'Gentle drops for infant colic and griping pain.',
     originalDescription: 'Dontive-5 provides safe and effective relief from colic pain, gas, and stomach discomfort in infants and children.',
