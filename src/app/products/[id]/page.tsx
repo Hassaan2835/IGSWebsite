@@ -17,14 +17,14 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
   const [isImageModalOpen, setIsImageModalOpen] = useState(false);
   const [selectedPackSize, setSelectedPackSize] = useState('30 Tablets');
   const [activeImage, setActiveImage] = useState<string | null>(null);
-  
+
   const imageThumbnails = [
     product?.image,
     'https://picsum.photos/seed/p1/500/600',
     'https://picsum.photos/seed/p2/500/600',
     'https://picsum.photos/seed/p3/500/600',
   ].filter(Boolean) as string[];
-  
+
   useEffect(() => {
     if (product) {
       setActiveImage(product.image);
@@ -42,30 +42,70 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
     if (activeImageIndex === -1) return;
     setActiveImage(imageThumbnails[(activeImageIndex - 1 + imageThumbnails.length) % imageThumbnails.length]);
   }, [activeImageIndex, imageThumbnails]);
-  
+
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (isImageModalOpen) {
-        if (event.key === 'ArrowRight') {
-          nextImage();
-        } else if (event.key === 'ArrowLeft') {
-          prevImage();
-        } else if (event.key === 'Escape') {
-          setIsImageModalOpen(false);
-        }
+        if (event.key === 'ArrowRight') nextImage();
+        else if (event.key === 'ArrowLeft') prevImage();
+        else if (event.key === 'Escape') setIsImageModalOpen(false);
       }
     };
-
     window.addEventListener('keydown', handleKeyDown);
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-    };
+    return () => window.removeEventListener('keydown', handleKeyDown);
   }, [isImageModalOpen, nextImage, prevImage]);
-
 
   if (!product) {
     notFound();
   }
+
+  // ── JSON-LD: Product + BreadcrumbList ────────────────────────────────────
+  const productSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: product.name,
+    image: product.image,
+    description: product.originalDescription,
+    sku: product.id,
+    brand: {
+      '@type': 'Brand',
+      name: 'IGS Health Care',
+    },
+    manufacturer: {
+      '@type': 'Organization',
+      name: 'IGS Health Care',
+      url: 'https://www.igshealthcare.com',
+    },
+    category: product.category.replace(/-/g, ' '),
+    offers: {
+      '@type': 'Offer',
+      url: `https://www.igshealthcare.com/products/${product.id}`,
+      priceCurrency: 'PKR',
+      price: '1150',
+      availability: 'https://schema.org/InStock',
+      seller: {
+        '@type': 'Organization',
+        name: 'IGS Health Care',
+      },
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.5',
+      reviewCount: '306',
+      bestRating: '5',
+      worstRating: '1',
+    },
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.igshealthcare.com' },
+      { '@type': 'ListItem', position: 2, name: 'Products', item: 'https://www.igshealthcare.com/products' },
+      { '@type': 'ListItem', position: 3, name: product.name, item: `https://www.igshealthcare.com/products/${product.id}` },
+    ],
+  };
 
   const certifications = [
     { name: "ISO", icon: <Award className="w-6 h-6 text-blue-600" /> },
@@ -74,53 +114,80 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
     { name: "HACCP", icon: <ShieldCheck className="w-6 h-6 text-red-600" /> },
     { name: "Halal", icon: <Leaf className="w-6 h-6 text-green-700" /> },
     { name: "Non-GMO", icon: <Sprout className="w-6 h-6 text-green-500" /> },
-    { name: "Vegan", icon: <Leaf className="w-6 h-6 text-green-800" /> }
+    { name: "Vegan", icon: <Leaf className="w-6 h-6 text-green-800" /> },
   ];
 
   return (
     <div className="container mx-auto px-4 py-12 md:px-6 md:py-16">
-      <div className="text-sm text-muted-foreground mb-4">
-        <Link href="/" className="hover:text-primary">Home</Link>
-        {' / '}
-        <Link href="/products" className="hover:text-primary">Products</Link>
-        {' / '}
-        <span className="font-medium text-foreground">{product.name}</span>
-      </div>
+      {/* JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
+      {/* Breadcrumb */}
+      <nav className="text-sm text-muted-foreground mb-4" aria-label="Breadcrumb">
+        <ol className="flex items-center gap-1">
+          <li><Link href="/" className="hover:text-primary">Home</Link></li>
+          <li aria-hidden="true">/</li>
+          <li><Link href="/products" className="hover:text-primary">Products</Link></li>
+          <li aria-hidden="true">/</li>
+          <li><span className="font-medium text-foreground" aria-current="page">{product.name}</span></li>
+        </ol>
+      </nav>
+
       <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-        {/* Left Column: Image Gallery */}
+        {/* Image Gallery */}
         <div className="flex flex-col items-center gap-4 md:sticky top-20 self-start">
-          <div 
+          <div
             className="relative aspect-[4/5] w-full max-w-md rounded-lg overflow-hidden shadow-lg border cursor-pointer"
             onClick={() => setIsImageModalOpen(true)}
+            role="button"
+            aria-label={`View full image of ${product.name}`}
+            tabIndex={0}
+            onKeyDown={(e) => e.key === 'Enter' && setIsImageModalOpen(true)}
           >
-            {activeImage && <Image
-              src={activeImage}
-              alt={product.name}
-              fill
-              data-ai-hint={product.dataAiHint}
-              className="object-contain p-4"
-            />}
+            {activeImage && (
+              <Image
+                src={activeImage}
+                alt={`${product.name} — ${product.shortDescription}`}
+                fill
+                data-ai-hint={product.dataAiHint}
+                className="object-contain p-4"
+              />
+            )}
           </div>
-          <div className="flex gap-2">
+          <div className="flex gap-2" role="list" aria-label="Product image thumbnails">
             {imageThumbnails.map((img, index) => (
               <button
                 key={index}
                 className={`w-20 h-20 rounded-md border-2 overflow-hidden ${activeImage === img ? 'border-primary' : 'border-transparent'}`}
                 onClick={() => setActiveImage(img)}
+                aria-label={`View image ${index + 1} of ${product.name}`}
               >
-                <Image src={img} alt={`${product.name} thumbnail ${index + 1}`} width={80} height={80} className="object-cover w-full h-full" />
+                <Image
+                  src={img}
+                  alt={`${product.name} thumbnail ${index + 1}`}
+                  width={80}
+                  height={80}
+                  className="object-cover w-full h-full"
+                />
               </button>
             ))}
           </div>
         </div>
 
-        {/* Right Column: Product Details */}
+        {/* Product Details */}
         <div className="space-y-6">
-           <div>
+          <div>
             <Badge variant="default" className="text-lg mb-2">{product.name}</Badge>
             <p className="text-3xl font-bold mb-4">Rs. 1,150</p>
-             <div>
-              <h3 className="font-semibold text-lg mb-2">Helps to:</h3>
+            <div>
+              <h2 className="font-semibold text-lg mb-2">Helps to:</h2>
               <ul className="list-disc list-inside text-muted-foreground space-y-1">
                 <li>Control <span className="font-semibold text-foreground">hair fall</span> by strengthening hair follicles.</li>
                 <li>Boost <span className="font-semibold text-foreground">keratin production</span> for thicker and fuller hair.</li>
@@ -129,50 +196,57 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
             </div>
           </div>
 
-           <div>
-              <p className="text-sm font-medium mb-2">Pack Size: <span className="font-semibold">{selectedPackSize}</span></p>
-              <div className="flex gap-2">
-                  {['30 Tablets', '60 Tablets', '120 Tablets'].map(size => (
-                      <Button 
-                          key={size}
-                          variant={selectedPackSize === size ? 'default' : 'outline'}
-                          onClick={() => setSelectedPackSize(size)}
-                      >
-                          {size}
-                      </Button>
-                  ))}
-              </div>
+          {/* Pack Size */}
+          <div>
+            <p className="text-sm font-medium mb-2">
+              Pack Size: <span className="font-semibold">{selectedPackSize}</span>
+            </p>
+            <div className="flex gap-2" role="group" aria-label="Select pack size">
+              {['30 Tablets', '60 Tablets', '120 Tablets'].map((size) => (
+                <Button
+                  key={size}
+                  variant={selectedPackSize === size ? 'default' : 'outline'}
+                  onClick={() => setSelectedPackSize(size)}
+                  aria-pressed={selectedPackSize === size}
+                >
+                  {size}
+                </Button>
+              ))}
+            </div>
           </div>
-          
-          {/* Certifications Section */}
-          <div className="flex flex-wrap items-center justify-center gap-4 py-4">
-            {certifications.map(cert => (
+
+          {/* Certifications */}
+          <div
+            className="flex flex-wrap items-center justify-center gap-4 py-4"
+            aria-label="Product certifications"
+          >
+            {certifications.map((cert) => (
               <div key={cert.name} className="flex flex-col items-center gap-1 text-xs text-muted-foreground">
-                {cert.icon}
+                <span aria-hidden="true">{cert.icon}</span>
                 <span>{cert.name}</span>
               </div>
             ))}
           </div>
 
-          {/* Accordion Section */}
+          {/* Accordion */}
           <Accordion type="single" collapsible defaultValue="item-1" className="w-full">
             <AccordionItem value="item-1">
               <AccordionTrigger className="text-lg font-semibold">Product Details</AccordionTrigger>
               <AccordionContent className="text-base text-muted-foreground p-4 space-y-4">
                 <div>
-                  <h4 className="font-semibold text-foreground">Composition</h4>
+                  <h3 className="font-semibold text-foreground">Composition</h3>
                   <p>{product.details.composition}</p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-foreground">Health Benefits</h4>
+                  <h3 className="font-semibold text-foreground">Health Benefits</h3>
                   <p>{product.details.healthBenefits}</p>
                 </div>
-                 <div>
-                  <h3 className="font-semibold text-lg mb-2">Helps to:</h3>
+                <div>
+                  <h3 className="font-semibold text-lg mb-2">Also helps to:</h3>
                   <ul className="list-disc list-inside text-muted-foreground space-y-1">
-                      <li>Provide an an <span className="font-semibold text-foreground">energy boost</span> to improve productivity and overall wellbeing.</li>
-                      <li>Fight off <span className="font-semibold text-foreground">fatigue and lethargy.</span></li>
-                      <li>Support <span className="font-semibold text-foreground">immunity, bone and muscle health.</span></li>
+                    <li>Provide an <span className="font-semibold text-foreground">energy boost</span> to improve productivity and overall wellbeing.</li>
+                    <li>Fight off <span className="font-semibold text-foreground">fatigue and lethargy.</span></li>
+                    <li>Support <span className="font-semibold text-foreground">immunity, bone and muscle health.</span></li>
                   </ul>
                 </div>
               </AccordionContent>
@@ -180,89 +254,88 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
             <AccordionItem value="item-2">
               <AccordionTrigger className="text-lg font-semibold">Ingredients</AccordionTrigger>
               <AccordionContent className="text-base text-muted-foreground p-4">
-                <p>Key Ingredients: {product.keyIngredients}</p>
+                <p><strong>Key Ingredients:</strong> {product.keyIngredients}</p>
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3">
               <AccordionTrigger className="text-lg font-semibold">FAQs</AccordionTrigger>
-              <AccordionContent className="text-base text-muted-foreground p-4">
-                <p>Common questions about this product will be listed here.</p>
+              <AccordionContent className="text-base text-muted-foreground p-4 space-y-4">
+                <div>
+                  <p className="font-semibold text-foreground">How should I take this product?</p>
+                  <p>Follow the dosage instructions on the label or as directed by your healthcare professional.</p>
+                </div>
+                <div>
+                  <p className="font-semibold text-foreground">Is this product safe for long-term use?</p>
+                  <p>Yes. Our products are formulated under WHO-GMP standards and are safe for long-term use as per recommended dosage.</p>
+                </div>
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-4">
               <AccordionTrigger className="text-lg font-semibold">Customer Reviews</AccordionTrigger>
               <AccordionContent className="text-base text-muted-foreground p-4">
-                 <div className="flex items-center gap-2">
-                    <div className="flex text-yellow-400">
-                        <Star className="w-5 h-5"/>
-                        <Star className="w-5 h-5"/>
-                        <Star className="w-5 h-5"/>
-                        <Star className="w-5 h-5"/>
-                        <StarHalf className="w-5 h-5"/>
-                    </div>
-                    <p className="text-sm text-muted-foreground">(306 reviews)</p>
-                 </div>
+                <div className="flex items-center gap-2">
+                  <div className="flex text-yellow-400" aria-label="Rating: 4.5 out of 5 stars">
+                    <Star className="w-5 h-5" /><Star className="w-5 h-5" /><Star className="w-5 h-5" />
+                    <Star className="w-5 h-5" /><StarHalf className="w-5 h-5" />
+                  </div>
+                  <p className="text-sm text-muted-foreground">(306 reviews)</p>
+                </div>
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-5">
               <AccordionTrigger className="text-lg font-semibold">Our Quality Promise</AccordionTrigger>
               <AccordionContent className="text-base text-muted-foreground p-4">
-                <p>We are committed to providing the highest quality natural medicines. Our products are manufactured under strict WHO-GMP guidelines to ensure safety and efficacy.</p>
+                <p>We are committed to providing the highest quality natural medicines. Our products are manufactured under strict WHO-GMP guidelines to ensure safety and efficacy for every user.</p>
               </AccordionContent>
             </AccordionItem>
           </Accordion>
-
         </div>
       </div>
 
+      {/* Image Modal */}
       {isImageModalOpen && activeImage && (
-        <div 
+        <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/90"
           onClick={() => setIsImageModalOpen(false)}
+          role="dialog"
+          aria-modal="true"
+          aria-label={`Image viewer for ${product.name}`}
         >
-          <div className="relative w-full h-full flex items-center justify-center p-4" onClick={e => e.stopPropagation()}>
-            
+          <div className="relative w-full h-full flex items-center justify-center p-4" onClick={(e) => e.stopPropagation()}>
             <div className="relative w-full h-full max-w-screen-lg max-h-screen">
-              <Image
-                src={activeImage}
-                alt={product.name}
-                fill
-                className="object-contain"
-              />
+              <Image src={activeImage} alt={`${product.name} — full view`} fill className="object-contain" />
             </div>
-            
-            <button 
+            <button
               onClick={() => setIsImageModalOpen(false)}
               className="absolute top-4 right-4 text-white bg-black/30 rounded-full p-2 hover:bg-black/60 transition-colors z-10"
               aria-label="Close image viewer"
             >
               <X className="w-8 h-8" />
             </button>
-            
             <button
-                onClick={prevImage}
-                className="absolute left-4 top-1/2 -translate-y-1/2 text-white bg-black/30 rounded-full p-2 hover:bg-black/60 transition-colors"
-                aria-label="Previous image"
+              onClick={prevImage}
+              className="absolute left-4 top-1/2 -translate-y-1/2 text-white bg-black/30 rounded-full p-2 hover:bg-black/60 transition-colors"
+              aria-label="Previous image"
             >
-                <ChevronLeft className="w-8 h-8" />
+              <ChevronLeft className="w-8 h-8" />
             </button>
-
             <button
-                onClick={nextImage}
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-white bg-black/30 rounded-full p-2 hover:bg-black/60 transition-colors"
-                aria-label="Next image"
+              onClick={nextImage}
+              className="absolute right-4 top-1/2 -translate-y-1/2 text-white bg-black/30 rounded-full p-2 hover:bg-black/60 transition-colors"
+              aria-label="Next image"
             >
-                <ChevronRight className="w-8 h-8" />
+              <ChevronRight className="w-8 h-8" />
             </button>
-            
-            {activeImageIndex !== -1 && <div className="absolute top-4 left-4 text-white bg-black/30 rounded-md px-3 py-1 text-lg">
-              {activeImageIndex + 1} / {imageThumbnails.length}
-            </div>}
-
+            {activeImageIndex !== -1 && (
+              <div className="absolute top-4 left-4 text-white bg-black/30 rounded-md px-3 py-1 text-lg" aria-live="polite">
+                {activeImageIndex + 1} / {imageThumbnails.length}
+              </div>
+            )}
           </div>
         </div>
       )}
 
+      {/* AI Description Tool */}
       <div className="mt-16">
         <EnhanceDescriptionTool
           productName={product.name}
